@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+cd /media/aitor/HDD/iuFOR_trabajo/Repositorios/LINUX/SIMANFOR/simulator/simulator/src
+
+python3 main.py -s ../files/non_wood/Pn06.json > ../tests/terminal_info/Pn06.txt
+python3 main.py -s ../files/non_wood/Pn08.json > ../tests/terminal_info/Pn08.txt
+python3 main.py -s ../files/non_wood/Ppa05.json > ../tests/terminal_info/Ppa05.txt
+python3 main.py -s ../files/non_wood/Ppa06.json > ../tests/terminal_info/Ppa06.txt
+python3 main.py -s ../files/non_wood/Ppa07.json > ../tests/terminal_info/Ppa07.txt
+python3 main.py -s ../files/non_wood/Ps08.json > ../tests/terminal_info/Ps08.txt
+python3 main.py -s ../files/non_wood/Ps11.json > ../tests/terminal_info/Ps11.txt
+python3 main.py -s ../files/non_wood/Ppin12.json > ../tests/terminal_info/Ppin12.txt
+python3 main.py -s ../files/non_wood/Ppin18.json > ../tests/terminal_info/Ppin16.txt
+python3 main.py -s ../files/non_wood/Ppin24.json > ../tests/terminal_info/Ppin24.txt
+
+grep -r "mistake"
+grep -r "rror"
+

@@ -1,0 +1,1577 @@
+es:
+
+# That document is a translation file
+# The first line must be the abbreviation of the simulator language file, which must be in the name of the file also
+# Below, information are divided by "blocks", depending the utility of the information
+# Changes on that document will affect only to the output file, not modifying the general information of the simulator
+# If some variables doesn´t appear on that document, they will be shown at the output file with the simulator path name, in example, simulator.tree.dbh
+# New variables must be added to that document on the corresponding place in order to rename them on the output
+# The name located at the left of ":" symbol are the names of the variables in the simulator, while the names at the right are the ones we want to show in the output
+# To modify that document, is only needed to change the names at the right to the new language
+
+  general:  # general information
+
+    # Cuts
+    PercentOfTrees: Densidad
+    Percent of trees: Densidad
+    Volumen: Volumen
+    Area: Área Basimétrica
+    Cut Down by Tallest: Corta por lo alto
+    Cut Down by Smallest: Corta por lo bajo
+    Systematics cut down: Corta sistemática
+    Cut Down by Tallest with Future Trees: Corta por lo alto con árboles de porvenir
+    Systematics cut down with Future Trees: Corta sistemática con árboles de porvenir
+    Debark: Descorchado    
+
+    # Output sheets information
+    plot_sheet: Parcelas
+    node_sheet: Nodo
+    trees_sheet: Pies inventariados
+    description_sheet: Descripción
+    metadata_sheet: Metadatos
+    summary_sheet: Resumen
+    initial_inventory: Inventario inicial
+
+    # Output titles - summary
+    main_specie: Composición específica
+    specie_ifn_id: ID especie principal (IFN)  # IFN (Spanish National Forestal Inventory) ID of the main specie
+    forest: Monte
+    study_area: Zona de estudio
+    model: Modelo
+    scenario: Escenario
+    inventory: Inventario
+    plot: Parcela
+    sum_age: Edad (años)
+    sum_year: Anho    
+    sum_hdom: Ho (m)
+    sum_density_b_cut: N (pies/ha)
+    sum_qmdbh_b_cut: dg (cm)
+    sum_ba_b_cut: G (m2/ha)
+    sum_vol_b_cut: V (m3/ha)
+    sum_density_cut: N (pies/ha)
+    sum_qmdbh_cut: dg (cm)
+    sum_vol_cut: V (m3/ha)
+    sum_density_a_cut: N (pies/ha)
+    sum_qmdbh_a_cut: dg (cm)
+    sum_ba_a_cut: G (m2/ha)
+    sum_vol_a_cut: V (m3/ha)
+    sum_density_dead: N (pies/ha)
+    sum_qmdbh_dead: dg (cm)
+    sum_vol_dead: V (m3/ha)
+    sum_density_ing: N (pies/ha)
+    sum_ba_ing: G (m2/ha)
+    stand_before_cut: Masa antes de la corta
+    stand_cut: Masa extraída
+    stand_after_cut: Masa después de la corta
+    stand_dead: Masa muerta
+    stand_ingrowth: Masa incorporada
+    # Special variables about no timber products
+    QSUBER_VARS: Quercus suber - productos no maderables
+    W_CORK: W Corcho Fresco (t/ha)
+    TOTAL_W_DEBARK: W descorchado (t/ha)
+    BARK_VOL: V Corcho (m3/ha)
+    TOTAL_V_DEBARK: V descorchado (m3/ha)
+    PPINEA_VARS: Pinus pinea - productos no maderables
+    ALL_CONES: Piñas/(ha*año)
+    SOUND_CONES: Piñas sanas/(ha*año)
+    SOUND_SEEDS: Semillas sanas/(ha*año)
+    W_SOUND_CONES: W piñas sanas (t/ha*año)
+    W_ALL_CONES: W piñas total (t/ha*año)
+    MUSHROOMS_VARS: Producción de hongos
+    EDIBLE_MUSH: Comestibles (kg/ha*año)
+    MARKETED_MUSH: Comerciales (kg/ha*año)
+    MARKETED_LACTARIUS: Lactarius comerciales (kg/ha*año)
+    MUSHROOM_PRODUCTIVITY: Producción de setas (kg peso fresco/ha)
+
+    # Output titles - description
+    model_info: Información del modelo
+    plot_info: Información de parcela
+    datetime: Fecha simulación
+
+    # Output contents - Scenario variable contents
+    LOAD: Carga Inicial
+    INIT: Inicialización
+    EXECUTION: Ejecución
+    HARVEST: Corta
+    DEBARK: Descorche    
+
+  area:
+    # Plot general information about the study area
+    PLOT_TYPE: Tipo_de_parcela
+    PLOT_AREA: Superficie_parcela
+    PROVINCE: Provincia
+    STUDY_AREA: Zona_de_estudio
+    MUNICIPALITY: Municipio
+    FOREST: Monte
+    PROV_REGION: Region_procedencia
+    MAIN_SPECIE: Composicion_especifica
+    SPECIE_IFN_ID: ID_especie_principal  # IFN (Spanish National Forestal Inventory) ID of the main specie
+    SLOPE: Pendiente  # (%)
+    ASPECT: Exposicion  # (rad)
+    CONTINENTALITY: Continentalidad  # (linear distance to the Mediterranean sea, km)
+    LONGITUDE: Longitud
+    LATITUDE: Latitud
+    ALTITUDE: Altitud
+    AA_RAINFALL: Precipitacion_Media_Anual  # (mm)
+    MA_TEMPERATURE: Temperatura_Media_Anual  # (ºC)
+    SEPTEMBER_RAIN: Precipitacion_Septiembre  # (mm)
+    SEPTEMBER_TEMP: Temperatura_Media_Septiembre  # (ºC)
+    NOVEMBER_RAIN: Precipitacion_Noviembre  # (mm)
+    NOVEMBER_TEMP: Temperatura_Media_Noviembre  # (ºC)    
+    MARTONNE: Indice_Martonne
+    MARTONNE_2020: Indice_Martonne_1
+    MARTONNE_2040: Indice_Martonne_2
+    MARTONNE_2060: Indice_Martonne_3
+    MARTONNE_2080: Indice_Martonne_4
+
+    # Cistus ladanifer
+    TR: Tipo_tratamiento  # dummy variable (equal to 1 if the scrubland was developed on burned area and equal to 0 if the scrubland was developed on cleared area)    
+    RAIN_AS: Precipitacion_AS  # sum of the total precipitation of August and September (mm)
+    TMIN_SO: Tmin_SO  # is the sum of the minimum absolute temperature of September and October (ºC)
+    TMIN_ON: Tmin_ON  # is the sum of the minimum absolute temperature of October and November (ºC)
+    TMIN_OND: Tmin_OND  # is the sum of the minimum absolute temperature of October, November and December (ºC)
+    TMMIN_OCT: Tmmin_O  # mean minimum temperature of October (ºC)
+    TSUM_MEAN_SO: Tsum_med_SO  # is the sum of the mean temperatures of September and October (ºC)
+    TSUM_MMIN_SO: Tsum_mmin_SO # is the sum of the mean minimum temperatures of September and October (ºC)
+    TSUM_MMIN_ON: Tsum_mmin_ON  # is the sum of the mean minimum temperatures of October and November (ºC)
+    TSUM_MMIN_SOND: Tsum_mmin_SOND  # is the sum of the mean minimum temperatures of September, October, November and December (ºC)
+
+  model:
+    # information about the model
+    MODEL_NAME: Nombre del modelo
+    SPECIE_IFN_ID: ID especie principal (IFN)  # IFN (Spanish National Forestal Inventory) ID of the main specie
+    APLICATION_AREA: Área de aplicación
+    VALID_PROV_REG: Regiones de procedencia
+    EXEC_TIME: Tiempo ejecuciones  # (years)
+    MODEL_TYPE: Tipo de modelo
+    MODEL_CARD_ES: Ficha modelo - español
+    MODEL_CARD_EN: Ficha modelo - inglés
+
+  plot:
+    # IDs and model information
+    INVENTORY_ID: ID_Inventario
+    PLOT_ID: ID_Parcela
+
+    # Scenario general information
+    file_name: Nombre_archivo_escenario    
+    scenario_id: ID_escenario
+    trees_sheet: Hoja_arboles
+    scenario_age: Edad_de_escenario
+    scenario_action: Accion
+    scenario_min_age: Edad_minima
+    scenario_max_age: Edad_maxima
+    action_time: Tiempo
+    cut_type: Tipo_de_corta
+    cut_severity: Intensidad_de_corta
+    cut_criteria: Criterio_de_corta
+    preserve_trees: Arboles_porvenir
+    species: Especie_a_cortar
+    volume_target: Objetivo_intensidad_de_corta
+
+    # Basic plot variables measured
+    EXPAN: Factor_de_expansion  # expansion factor
+    AGE: T  # (years)
+    YEAR: Anho
+    DENSITY: 'N'  # (nº trees/ha)
+    DENSITY_CUT_VOLUME: N_extraido  # stand density harvested volume (nº trees/ha)
+    DEAD_DENSITY: N_muerto  # Nº of dead trees after an execution (nº trees/ha)
+    ING_DENSITY: N_incorporado  # Nº of ingrowth trees after an execution (nº trees/ha)
+
+    # Basic plot variables calculated - basal area
+    BASAL_AREA: G  # (m2/ha)
+    BA_MAX: g_maxima  # (cm2)
+    BA_MIN: g_minima  # (cm2)
+    MEAN_BA: g_medio  # (cm2)
+    BA_CUT_VOLUME: G_extraida  # Basal area harvested volume (m2/ha)
+    DEAD_BA: G_muerta  # Basal area of dead trees after an execution (m2/ha)
+    ING_BA: G_incorporada  # Basal area of ingrowth trees after an execution (m2/ha)
+
+    # Basic plot variables calculated - diameter   
+    DBH_MAX: dbh_maximo  # (cm)
+    DBH_MIN: dbh_minimo  # (cm)    
+    MEAN_DBH: dbh_medio  # (cm)
+    QM_DBH: dg  # (cm)
+    DOMINANT_DBH: Do  # (cm)
+    DOMINANT_SECTION: Seccion_dominante  # Dominant section of the plot (cm)
+
+    # Basic plot variables calculated - height
+    H_MAX: h_maxima  # (m)
+    H_MIN: h_minima  # (m)
+    MEAN_H: h_media  # (m)
+    DOMINANT_H: Ho  # (m)
+
+    # Basic plot variables calculated - crown
+    CROWN_MEAN_D: d_medio_copa  # (m)
+    CROWN_DOM_D: Do_copa  # (m)
+    CANOPY_COVER: FCC  # (%)
+    CANOPY_VOL: V_copa  # Canopy volume (m3)   
+
+    # Basic plot variables calculated - plot
+    SLENDERNESS_MEAN: Esbeltez  # slenderness calculated by using mean values of height and dbh (cm/cm)
+    SLENDERNESS_DOM: Esbeltez_dominante  # slenderness calculated by using top height and dbh values (cm/cm)
+    REINEKE: SDI  # Stand Density Index - SDI
+    REINEKE_MAX: SDImax  # Maximum Stand Density Index
+    REINEKE_VALUE: r_(SDI)  # r contstant value of SDI  to the specie of the model (-1.605 as default)    
+    HART: HartBecking__marco_real  # Hart-Becking Index - S
+    HART_STAGGERED: HartBecking__tresbolillo  # Hart-Becking Index - S
+    SI: SI  # (m)
+    REF_SI_AGE: SI_edad_referencia  # SI reference age (years)
+    HEGYI_RADIUS: Radio_Hegyi  # radius value to calculate the Hegyi competition index (m)
+
+    # Plot variables calculated - volume
+    VOL: V_con_corteza  # (m3/ha)
+    BOLE_VOL: V_sin_corteza  # (m3/ha)
+    BARK_VOL : V_de_corteza  # (m3/ha)
+    VOL_CUT_VOLUME: V_extraido  # Volume harvested percentaje (m3/ha)
+    DEAD_VOL: V_muerto  # Volume of dead trees after an execution (m3/ha)
+    ING_VOL: V_incorporado  # Volume of ingrowth trees after an execution (m3/ha)
+
+    # Plot variables calculated - biomass
+    WSW: WSW  # wsw = stem wood (t/ha)
+    WSB: WSB  # wsb = stem bark (t/ha)
+    WSWB: WSWB  # wswb = stem wood and stem bark (t/ha)
+    WTHICKB: WTHICKB  # wthickb = Thick branches > 7 cm (t/ha)
+    WSTB: WSTB  # wstb = wsw + wthickb, stem + branches >7 cm (t/ha)
+    WB2_7: WB2_7  # wb2_7 = branches (2-7 cm) (t/ha)
+    WB2_T: WB2_t  # wb2_t = wb2_7 + wthickb; branches >2 cm (t/ha)
+    WTHINB: WTHINB  # wthinb = Thin branches (2-0.5 cm) (t/ha)
+    WB05: WB0.5  # wb05 = thinniest branches (<0.5 cm) (t/ha)
+    WB05_7: WB05_7  # wb05_7 = branches between 0.5-7 cm (t/ha)
+    WB0_2: WB0_2  # wb0_2 = branches < 2 cm (t/ha)
+    WDB: WDB  # wdb = dead branches biomass (t/ha)
+    WL: WL  # wl = leaves (t/ha)
+    WTBL: WTBL  # wtbl = wthinb + wl; branches <2 cm and leaves (t/ha)
+    WBL0_7: WBL0_7  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (t/ha)
+    WS: WS  # All stem with bark biomass (t/ha)
+    WB: WB  # All branches of different sizes and leaves biomass (t/ha)
+    WR: WR  # wr = roots (t/ha)
+    WT: WT  # wt = biomasa total (t/ha)
+    WT_CUT_VOLUME: WT_extraido  # WT of the cut trees after a cut process (t/ha)
+    DEAD_WT: WT_muerta  # WT of the dead trees after an execution (t/ha)
+    ING_WT: WT_incorporada  # WT of the ingrowth trees after an execution (t/ha)
+
+    # Plot variables calculated - wood uses
+    UNWINDING: V_desenrollo  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER: V_chapa  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG: V_sierra_gruesa  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL: V_sierra  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER: V_sierra_canter  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST: V_postes  # post = useful volume for post destiny (m3/ha)
+    STAKE: V_estacas  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS: V_trituracion  # chips = useful volume for chips destiny (m3/ha)
+
+    # Species Diversity Indexes
+    SHANNON: Índice de Diversidad de Shannon-Weaver
+    SIMPSON: Índice de Diversidad de Simpson
+    MARGALEF: Índice de Diversidad Específica de Margalef
+    PIELOU: Índice de Diversidad de Pielou
+
+    # Quercus suber special variables
+    W_CORK: W_Corcho_Fresco  # w_cork = fresh cork biomass (t/ha)
+    TOTAL_W_DEBARK: W_descorchado  # Total cork biomass (t/ha) extraxted from debark treatments
+    TOTAL_V_DEBARK: V_descorchado  # Total cork volume (m3/ha) extracted from debark treatments
+
+    # Pinus pinea special variables
+    ALL_CONES: Pinhas  # total of cones of the plot (anual mean)
+    SOUND_CONES: Pinhas_sanas  # total sound (healthy) cones of the plot (anual mean)
+    SOUND_SEEDS: Semillas_sanas  # total sound (healthy) seeds of the plot (anual mean)
+    W_SOUND_CONES: W_pinhas_sanas  # weight of sound (healthy) cones (t/ha) (anual mean)
+    W_ALL_CONES: W_pinhas  # weight of all (healthy and not) cones (t/ha) (anual mean)
+
+    # Mushrooms special variables
+    EDIBLE_MUSH: Setas_comestibles  # annual mushroom production of edible species (mean value) (kg/ha)
+    MARKETED_MUSH: Setas_comerciales  # annual mushroom production of marketed species (mean value) (kg/ha)
+    MARKETED_LACTARIUS: Lactarius_comerciales  # production of marketed Lactarius (kg/ha*year)
+    MUSHROOM_PRODUCTIVITY: Produccion_setas  # total fresh-weight mushroom productivity (kg fw/ha)
+
+    # Cistus ladanifer special variables
+    TIME_AT: T_tras_tratamiento  # Tiempo tras el tratamiento de desbroce o quema prescrita (años)
+    B_EDULIS: B_edulis  # annual yield of B. edulis sporocarps (kg/ha*year)
+    MYCOD: MycoD  # Shannon diversity index of mycorrhizal taxa
+    MYCOP: MycoP  # Annual mushroom yield from all mycorrhizal species (kg/ha*year)
+    SAPROD: SaproD  # Shannon diversity index of saprotrophic fungi
+    SAPROP: SaproP  # annual mushroom yield of saprotrophic species (kg/ha*year)
+    
+
+    # MIXED MODELS
+    # General data
+    ID_SP1: ID_sp1  # IFN (Spanish National Forestal Inventory) ID specie 1 - mixed models
+    SP1_PROPORTION: Proporcion_sp1  # proportion of specie 1 on a mix plot - mixed models
+    DENSITY_SP1: N_sp1  # density of specie 1 on a mix plot - mixed models
+    BASAL_AREA_SP1: G_sp1  # basal area os specie 1 on a mix plot - mixed models
+    BA_MAX_SP1: g_max_sp1  # (cm2)
+    BA_MIN_SP1: g_min_sp1  # (cm2)
+    MEAN_BA_SP1: g_media_sp1  # (cm2) 
+    QM_DBH_SP1: dg_sp1  # quadratic mean dbh of specie 1 - mixed models
+    DBH_MAX_SP1: dbh_max_sp1  # (cm)
+    DBH_MIN_SP1: dbh_min_sp1  # (cm)
+    MEAN_DBH_SP1: dbh_medio_sp1  # (cm)
+    DOMINANT_DBH_SP1: Do_sp1  # dominant diameter os specie 1 (cm) on mixed models
+    H_MAX_SP1: h_max_sp1  # (m)
+    H_MIN_SP1: h_min_sp1  # (m)
+    MEAN_H_SP1: h_media_sp1  # (m)
+    DOMINANT_H_SP1: Ho_sp1  # dominant height of specie 1 - mixed models
+    DOMINANT_SECTION_SP1: Seccion_Dominante_sp1  # (cm)
+    REINEKE_SP1: SDI_sp1  # reineke index for specie 1 on mixed models
+    REINEKE_MAX_SP1: SDImax_sp1  # maximum reineke index for specie 1 on mixed models
+
+    ID_SP2: ID_sp2  # IFN (Spanish National Forestal Inventory) ID specie 2 - mixed models
+    SP2_PROPORTION: Proporcion_sp2  # proportion of specie 2 on a mix plot - mixed models
+    DENSITY_SP2: N_sp2  # density of specie 2 on a mix plot - mixed models
+    BASAL_AREA_SP2: G_sp2  # basal area os specie 2 on a mix plot - mixed models
+    BA_MAX_SP2: g_max_sp2  # (cm2)
+    BA_MIN_SP2: g_min_sp2  # (cm2)
+    MEAN_BA_SP2: g_media_sp2  # (cm2)
+    QM_DBH_SP2: dg_sp2  # quadratic mean dbh of specie 2 - mixed models
+    DBH_MAX_SP2: dbh_max_sp2  # (cm)
+    DBH_MIN_SP2: dbh_min_sp2  # (cm)
+    MEAN_DBH_SP2: dbh_medio_sp2  # (cm) 
+    H_MAX_SP2: h_max_sp2  # (m)
+    H_MIN_SP2: h_min_sp2  # (m)
+    MEAN_H_SP2: h_media_sp2  # (m)
+    DOMINANT_H_SP2: Ho_sp2  # dominant height of specie 2 - mixed models
+    DOMINANT_DBH_SP2: Do_sp2  # dominant diameter os specie 2 (cm) on mixed models
+    DOMINANT_SECTION_SP2: Seccion_Dominante_sp2  # (cm) 
+    REINEKE_SP2: SDI_sp2  # reineke index for specie 2 on mixed models
+    REINEKE_MAX_SP2: SDImax_sp2  # maximum reineke index for specie 2 on mixed models
+
+    # Crown
+    CROWN_MEAN_D_SP1: d_medio_copa_sp1  # (m)
+    CROWN_DOM_D_SP1: Do_copa_sp1  # (m)
+    CANOPY_COVER_SP1: FCC_sp1  # (%)
+    CANOPY_VOL_SP1: V_copa_sp1  # Canopy volume (m3) for specie 1
+
+    CROWN_MEAN_D_SP2: d_medio_copa_sp2  # (m)
+    CROWN_DOM_D_SP2: Do_copa_sp2  # (m)
+    CANOPY_COVER_SP2: FCC_sp2  # (%)        
+    CANOPY_VOL_SP2: V_copa_sp2  # Canopy volume (m3) for specie 2    
+
+    # Biomass
+    WSW_SP1: WSW_sp1  # wsw = stem wood (t/ha)
+    WSB_SP1: WSB_sp1  # wsb = stem bark (t/ha)
+    WSWB_SP1: WSWB_sp1  # wswb = stem wood and stem bark (t/ha)
+    WTHICKB_SP1: WTHICKB_sp1  # wthickb = Thick branches > 7 cm (t/ha)
+    WSTB_SP1: WSTB_sp1  # wstb = wsw + wthickb, stem + branches >7 cm (t/ha)
+    WB2_7_SP1: WB2_7_sp1  # wb2_7 = branches (2-7 cm) (t/ha)
+    WB2_T_SP1: WB_2_T_sp1  # wb2_t = wb2_7 + wthickb; branches >2 cm (t/ha)
+    WTHINB_SP1: WTHINB_sp1  # wthinb = Thin branches (2-0.5 cm) (t/ha)
+    WB05_SP1: WB05_sp1  # wb05 = thinniest branches (<0.5 cm) (t/ha)
+    WB05_7_SP1: WB05_7_sp1  # wb05_7 = branches between 0.5-7 cm (t/ha)
+    WB0_2_SP1: WB0_2_sp1  # wb0_2 = branches < 2 cm (t/ha)
+    WDB_SP1: WDB_sp1  # wdb = dead branches biomass (t/ha)
+    WL_SP1: WL_sp1  # wl = leaves (t/ha)
+    WTBL_SP1: WTBL_sp1  # wtbl = wthinb + wl; branches <2 cm and leaves (t/ha)
+    WBL0_7_SP1: WBL0_7_sp1  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (t/ha)
+    WR_SP1: WR_sp1  # wr = roots (t/ha)
+    WT_SP1: WT_sp1  # wt = biomasa total (t/ha)
+
+    WSW_SP2: WSW_sp2  # wsw = stem wood (t/ha)
+    WSB_SP2: WSB_sp2  # wsb = stem bark (t/ha)
+    WSWB_SP2: WSWB_sp2  # wswb = stem wood and stem bark (t/ha)
+    WTHICKB_SP2: WTHICKB_sp2  # wthickb = Thick branches > 7 cm (t/ha)
+    WSTB_SP2: WSTB_sp2  # wstb = wsw + wthickb, stem + branches >7 cm (t/ha)
+    WB2_7_SP2: WB2_7_sp2  # wb2_7 = branches (2-7 cm) (t/ha)
+    WB2_T_SP2: WB_2_T_sp2  # wb2_t = wb2_7 + wthickb; branches >2 cm (t/ha)
+    WTHINB_SP2: WTHINB_sp2  # wthinb = Thin branches (2-0.5 cm) (t/ha)
+    WB05_SP2: WB05_sp2  # wb05 = thinniest branches (<0.5 cm) (t/ha)
+    WB05_7_SP2: WB05_7_sp2  # wb05_7 = branches between 0.5-7 cm (t/ha)
+    WB0_2_SP2: WB0_2_sp2  # wb0_2 = branches < 2 cm (t/ha)
+    WDB_SP2: WDB_sp2  # wdb = dead branches biomass (t/ha)
+    WL_SP2: WL_sp2  # wl = leaves (t/ha)
+    WTBL_SP2: WTBL_sp2  # wtbl = wthinb + wl; branches <2 cm and leaves (t/ha)
+    WBL0_7_SP2: WBL0_7_sp2  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (t/ha)
+    WR_SP2: WR_sp2  # wr = roots (t/ha)
+    WT_SP2: WT_sp2  # wt = biomasa total (t/ha)
+
+    # Volume
+    VOL_SP1: V_con_corteza_sp1  # (m3/ha)
+    BOLE_VOL_SP1: V_sin_corteza_sp1  # (m3/ha)
+    BARK_VOL_SP1: V_corteza_sp1  # (m3/ha) 
+
+    VOL_SP2: V_con_corteza_sp2  # (m3/ha)
+    BOLE_VOL_SP2: V_sin_corteza_sp2  # (m3/ha)
+    BARK_VOL_SP2: V_corteza_sp2  # (m3/ha) 
+    
+    # Merchantable variables    
+    UNWINDING_SP1: V_desenrollo_sp1  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER_SP1: V_chapa_sp1  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG_SP1: V_sierra_gruesa_sp1  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL_SP1: V_sierra_sp1  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER_SP1: V_sierra_canter_sp1  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST_SP1: V_postes_sp1  # post = useful volume for post destiny (m3/ha)
+    STAKE_SP1: V_estacas_sp1  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS_SP1: V_trituracion_sp1  # chips = useful volume for chips destiny (m3/ha)
+    
+    UNWINDING_SP2: V_desenrollo_sp2  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER_SP2: V_chapa_sp2  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG_SP2: V_sierra_gruesa_sp2  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL_SP2: V_sierra_sp2  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER_SP2: V_sierra_canter_sp2  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST_SP2: V_postes_sp2  # post = useful volume for post destiny (m3/ha)
+    STAKE_SP2: V_estacas_sp2  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS_SP2: V_trituracion_sp2  # chips = useful volume for chips destiny (m3/ha)
+
+    UNWINDING_SP3: V_desenrollo_sp3  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER_SP3: V_chapa_sp3  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG_SP3: V_sierra_gruesa_sp3  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL_SP3: V_sierra_sp3  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER_SP3: V_sierra_canter_sp3  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST_SP3: V_postes_sp3  # post = useful volume for post destiny (m3/ha)
+    STAKE_SP3: V_estacas_sp3  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS_SP3: V_trituracion_sp3  # chips = useful volume for chips destiny (m3/ha)
+
+    # Auxiliar variables for future models - 08/03/2023
+    PLOT_VAR1: x
+    PLOT_VAR2: x
+    PLOT_VAR3: x
+    PLOT_VAR4: x
+    PLOT_VAR5: x
+    PLOT_VAR6: x
+    PLOT_VAR7: x
+    PLOT_VAR8: x
+    PLOT_VAR9: x
+    PLOT_VAR10: x
+    PLOT_VAR11: x
+    PLOT_VAR12: x
+    PLOT_VAR13: x
+    PLOT_VAR14: x
+    PLOT_VAR15: x
+    PLOT_VAR16: x
+    PLOT_VAR17: x
+    PLOT_VAR18: x
+    PLOT_VAR19: x
+    PLOT_VAR20: x
+    PLOT_VAR21: x
+    PLOT_VAR22: x
+    PLOT_VAR23: x
+    PLOT_VAR24: x
+    PLOT_VAR25: x
+    PLOT_VAR26: x
+    PLOT_VAR27: x
+    PLOT_VAR28: x
+    PLOT_VAR29: x
+    PLOT_VAR30: x
+    PLOT_VAR31: x
+    PLOT_VAR32: x
+    PLOT_VAR33: x
+    PLOT_VAR34: x
+    PLOT_VAR35: x
+    PLOT_VAR36: x
+    PLOT_VAR37: x
+    PLOT_VAR38: x
+    PLOT_VAR39: x
+    PLOT_VAR40: x
+    PLOT_VAR41: x
+    PLOT_VAR42: x
+    PLOT_VAR43: x
+    PLOT_VAR44: x
+    PLOT_VAR45: x
+    PLOT_VAR46: x
+    PLOT_VAR47: x
+    PLOT_VAR48: x
+    VOL_SP3: V_con_corteza_sp3
+    BOLE_VOL_SP3: V_sin_corteza_sp3
+    BARK_VOL_SP3: V_corteza_sp3
+    CARBON_STEM_SP1: Carbono_tronco_sp1
+    CARBON_BRANCHES_SP1: Carbono_ramas_sp1
+    CARBON_ROOTS_SP1: Carbono_raices_sp1
+    CARBON_SP1: Carbono_total_sp1
+    CARBON_STEM_SP2: Carbono_tronco_sp2
+    CARBON_BRANCHES_SP2: Carbono_ramas_sp2
+    CARBON_ROOTS_SP2: Carbono_raices_sp2
+    CARBON_SP2: Carbono_total_sp2
+    CARBON_STEM_SP3: Carbono_tronco_sp3
+    CARBON_BRANCHES_SP3: Carbono_ramas_sp3
+    CARBON_ROOTS_SP3: Carbono_raices_sp3
+    CARBON_SP3: Carbono_total_sp3
+    WS_SP3: WS_sp3
+    WB_SP3: WB_sp3
+    WR_SP3: WR_sp3
+    WT_SP3: WT_sp3
+    WS_SP2: WS_sp2
+    WB_SP2: WB_sp2
+    WS_SP1: WS_sp1
+    WB_SP1: WB_sp1
+    # following definitions are from the LiDAR metrics: https://github.com/r-lidar/lidR/wiki/stdmetrics
+    ZPCUM9: zpcum9
+    ZPCUM8: zpcum8
+    ZPCUM7: zpcum7
+    ZPCUM6: zpcum6
+    ZPCUM5: zpcum5
+    ZPCUM4: zpcum4
+    ZPCUM3: zpcum3
+    ZPCUM2: zpcum2
+    ZPCUM1: zpcum1
+    ZQ95: zq95
+    ZQ90: zq90
+    ZQ85: zq85
+    ZQ80: zq80
+    ZQ75: zq75
+    ZQ70: zq70
+    ZQ65: zq65
+    ZQ60: zq60
+    ZQ55: zq55
+    ZQ50: zq50
+    ZQ45: zq45
+    ZQ40: zq40
+    ZQ35: zq35
+    ZQ30: zq30
+    ZQ25: zq25
+    ZQ20: zq20
+    ZQ15: zq15
+    ZQ10: zq10
+    ZQ5: zq5
+    PZABOVE2: pzabove2
+    PZABOVEZMEAN: pzabovezmean
+    ZENTROPY: zentropy
+    ZKURT: zkurt
+    ZSKEW: zskew
+    ZSD: zsd
+    ZMEAN: zmean
+    ZMAX: zmax
+    SP3_N_PROPORTION: N_proporcion_sp3
+    SP2_N_PROPORTION: N_proporcion_sp2
+    SP1_N_PROPORTION: N_proporcion_sp1
+    BASAL_AREA_SP3: G_sp3
+    QM_DBH_SP3: dg_sp3
+    DENSITY_SP3: N_sp3
+    MEAN_H_SP3: h_media_sp3
+    H_MIN_SP3: h_min_sp3
+    H_MAX_SP3: h_max_sp3
+    MEAN_DBH_SP3: dbh_medio_sp3
+    DBH_MIN_SP3: dbh_min_sp3
+    DBH_MAX_SP3: dbh_max_sp3
+    MEAN_BA_SP3: g_media_sp3
+    BA_MIN_SP3: g_min_sp3
+    BA_MAX_SP3: g_max_sp3
+    DOMINANT_SECTION_SP3: Seccion_dominante_sp3
+    DOMINANT_DBH_SP3: Do_sp3
+    DOMINANT_H_SP3: Ho_sp3
+    CARBON_HEARTWOOD: Carbono_duramen
+    CARBON_SAPWOOD: Carbono_albura
+    CARBON_BARK: Carbono_corteza
+    CARBON_STEM: Carbono_tronco
+    CARBON_BRANCHES: Carbono_ramas
+    CARBON_ROOTS: Carbono_raices
+    CARBON: Carbono_total
+    DEADWOOD_INDEX_CESEFOR_G: Indice_biodiversidad_madera_muerta_G_CESEFOR
+    DEADWOOD_INDEX_CESEFOR_V: Indice_biodiversidad_madera_muerta_V_CESEFOR
+    SAW_BIG_LIFEREBOLLO: SIERRA_GRUESA-LIFEREBOLLO
+    SAW_SMALL_LIFEREBOLLO: SIERRA-LIFEREBOLLO
+    STAVES_INTONA: DUELAS_INTONA-LIFEREBOLLO
+    BOTTOM_STAVES_INTONA: DUELAS_FONDO_INTONA-LIFEREBOLLO
+    WOOD_PANELS_GAMIZ: MADERA_LAMINADA_GAMIZ-LIFEREBOLLO
+    MIX_GARCIA_VARONA: VARIOS_GARCIA_VARONA-LIFEREBOLLO
+
+  tree:
+    # IDs
+    INVENTORY_ID: ID_inventario
+    PLOT_ID: ID_parcela
+    TREE_ID: ID_arbol
+
+    # Special TREE_IDs to work with the IFN data
+    TREE_ID_IFN3_2: TREE_ID_IFN3_2
+    TREE_ID_IFN3: TREE_ID_IFN3
+    TREE_ID_IFN2: TREE_ID_IFN2
+    TREE_ID_compare: TREE_ID_compare
+
+    # Tree general information
+    number_of_trees: numero_de_individuos
+    specie: especie
+    bearing: rumbo  # bearing from the tree to the central point of the plot ('rumbo')
+    distance: distancia  # distance from the tree to the central point of the plot       
+    quality: calidad
+    shape: forma
+    special_param: parametros_especiales
+    remarks: observaciones
+    age_130: edad_a_1.30  # (years)
+    social_class: clase_sociologica
+    tree_age: t  # (years)
+    coord_x: coord_X
+    coord_y: coord_Y
+    coord_z: coord_Z
+
+    # Basic variables measured        
+    dbh_1: dbh_1  # diameter mesasurement 1 (cm)
+    dbh_2: dbh_2  # diameter mesasurement 2 (cm)
+    dbh: dbh  # diameter at breast height (cm)
+    dbh_i: dbh_i  # diameter at breast height (cm)
+    stump_h: h_tocon  # (m)
+    height: altura  # total height (m)
+    height_i: altura_i  # total height (m)
+    bark_1: corteza_1  # bark thickness mesasurement 1 (mm)
+    bark_2: corteza_2  # bark thickness mesasurement 2 (mm)
+    bark: corteza  # mean bark thickness (mm)
+    expan: factor_expansion  # expansion factor
+
+    # Basic variables calculated
+    normal_circumference: circunferencia_normal  # circumference at breast height (cm)
+    slenderness: esbeltez  # (cm/cm)
+    basal_area: g  # (cm2)
+    basal_area_i: g_i  # increment in basal area (cm2)
+    bal: bal  # (m2/ha)
+    ba_ha: g_ha  # (m2/ha)
+
+    # Crown variables
+    cr: cr  # (%)
+    lcw: lcw  #  largest crown width (m)
+    hcb: hcb  # height crown base (m)
+    hlcw: hlcw  # height of largest crown width (m)
+    cpa: cpa  # crown projection area (m2)
+    crown_vol: crown_vol  # crown volume (m3)
+
+    # Volume variables
+    vol: v_con_corteza  # volume with bark (dm3)
+    bole_vol: v_sin_corteza  # volume without bark (dm3)
+    bark_vol: v_de_corteza  # volume of bark (dm3)
+    firewood_vol: v_de_lenhas  # (dm3)
+    vol_ha: v_ha  # volume with bark per hectare (m3/ha)
+
+    # Biomass variables
+    wsw: wsw  # wsw = stem wood (kg)
+    wsb: wsb # wsb = stem bark (kg)
+    wswb: wswb  # wswb = stem wood and stem bark (kg)
+    w_cork: w_corcho_fresco  # w_cork = fresh cork biomass (kg)
+    wthickb: wthickb  # wthickb = Thick branches > 7 cm (kg)
+    wstb: wstb  # wstb = wsw + wthickb, stem + branches >7 cm (kg)
+    wb2_7: wb2_7  # wb2_7 = branches (2-7 cm) (kg)
+    wb2_t: wb2_t  # wb2_t = wb2_7 + wthickb; branches >2 cm (kg)
+    wthinb: wthinb  # wthinb = Thin branches (2-0.5 cm) (kg)
+    wb05: wb0.5  # wb05 = thinniest branches (<0.5 cm) (kg)
+    wb05_7: wb05_7  # wb05_7 = branches between 0.5-7 cm (kg)
+    wb0_2: wb0_2  # wb0_2 = branches < 2 cm (kg)
+    wdb: wdb  # wdb = dead branches biomass (kg)
+    wl: wl  # wl = leaves (kg)
+    wtbl: wtbl  # wtbl = wthinb + wl; branches <2 cm and leaves (kg)
+    wbl0_7: wbl0_7  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (kg)
+    ws: ws  # Biomasa de todo el tronco con corteza (t/ha)
+    wb: wb  # Biomasa de todas las ramas y hojas (t/ha)
+    wr: wr  # wr = roots (kg)
+    wt: wt  # wt = biomasa total (kg)
+
+    # Wood uses variables    
+    unwinding: v_desenrollo  # unwinding = useful volume for unwinding destiny (dm3)
+    veneer: v_chapa  #v eneer = useful volume for veneer destiny (dm3)
+    saw_big: v_sierra_gruesa  # saw_big = useful volume for big saw destiny (dm3)
+    saw_small: v_sierra  # saw_small = useful volume for small saw destiny (dm3)
+    saw_canter: v_sierra_canter  # saw_canter = useful volume for canter saw destiny (dm3)
+    post: v_poste  # post = useful volume for post destiny (dm3)
+    stake: v_estaca  # stake = useful volume for stake destiny (dm3)
+    chips: v_trituracion  # chips = useful volume for chips destiny (dm3)
+
+    # Competition information
+    hegyi: indice_hegyi  # Hegyi competition index calculation
+
+    # Quercus suber special variables
+    dbh_oc: dbh_con_corcho  # dbh over cork (cm) - Quercus suber
+    h_debark: altura_descorche  # uncork height on main stem (m) - Quercus suber
+    nb: ramas_descortezadas  # number of main bough stripped - Quercus suber
+    cork_cycle: ciclo_de_corcho  # moment to obtain cork data; 0 to the moment just immediately before the stripping process,
+    count_debark: n_descorches  # Accountant of debark operations realised over each tree
+    total_w_debark: w_descorchado  # Cork biomass accumulator (kg) from the extracted cork of each tree with debark operations
+    total_v_debark: v_descorchado  # Cork volume accumulator (dm3) from the extracted cork of each tree with debark operations
+
+# or 1 to the moment after the stripping process or at an intermediate age of the cork cycle production - Quercus suber
+    # uncork_type: tipo de descorche  # s = only stem; pb = principal branches; sb = secondary branches - Quercus suber
+
+    # Pinus pinea special variables
+    all_cones: pinhas  # number of all the cones of the tree (anual mean)
+    sound_cones: pinhas_sanas  # number of healthy cones in a tree  (anual mean)
+    sound_seeds: semillas_sanas  # total sound seeds of the tree (anual mean)
+    w_sound_cones: w_pinhas_sanas  # weight of sound (healthy) cones (kg) (anual mean)
+    w_all_cones: w_pinhas  # weight of all (healthy and not) cones (kg) (anual mean)
+
+
+    # mixed models
+    bal_intrasp: bal_intrasp  # intraspecific bal (m2/ha) for mixed models
+    bal_intersp: bal_intersp  # intraspecific bal (m2/ha) for mixed models
+    basal_area_intrasp: g_intrasp  # intraspecific basal area (m2/ha) for mixed models
+    basal_area_intersp: g_intersp  # interspecific basal area (m2/ha) for mixed models
+
+    # Basic variables on hegyi subplot
+    bal_intrasp_hegyi: bal_intrasp_hegyi  # intraspecific bal (m2/ha) inside hegyi subplot of each tree
+    bal_intersp_hegyi: bal_intersp_hegyi  # interspecific bal (m2/ha) inside hegyi subplot of each tree
+    bal_ratio_intrasp_hegyi: bal_ratio_intrasp_hegyi  # intraspecific bal ratio (0 to 1) inside hegyi subplot of each tree
+    bal_ratio_intersp_hegyi: bal_ratio_intersp_hegyi  # interspecific bal ratio (0 to 1) inside hegyi subplot of each tree
+    bal_total_hegyi: bal_total_hegyi  # total bal (m2/ha) inside hegyi subplot of each tree
+    g_intrasp_hegyi: g_intrasp_hegyi  # intraspecific basal area (m2/ha) inside hegyi subplot of each tree
+    g_intersp_hegyi: g_intersp_hegyi  # interspecific basal area (m2/ha) inside hegyi subplot of each tree
+    g_ratio_intrasp_hegyi: g_ratio_intrasp_hegyi  # intraspecific basal area ratio (0 to 1) inside hegyi subplot of each tree
+    g_ratio_intersp_hegyi: g_ratio_intersp_hegyi  # intraspecific basal area ratio (0 to 1) inside hegyi subplot of each tree
+    g_total_hegyi: g_total_hegyi  # total basal area (m2/ha) inside hegyi subplot of each tree
+    n_intrasp_hegyi: n_intrasp_hegyi  # intraspecific density (trees/ha) inside hegyi subplot of each tree
+    n_intersp_hegyi: n_intersp_hegyi  # interspecific density (trees/ha) inside hegyi subplot of each tree
+    n_ratio_intrasp_hegyi: n_ratio_intrasp_hegyi  # intraspecific density ratio (0 to 1) inside hegyi subplot of each tree
+    n_ratio_intersp_hegyi: n_ratio_intersp_hegyi  # interspecific density ratio (0 to 1) inside hegyi subplot of each tree
+    n_total_hegyi: n_total_hegyi  # total density (trees/ha) inside hegyi subplot of each tree
+
+    # Vorest variables
+    w_voronoi: w_voronoi  # weights used to construct the Voronoi diagrams 
+    neighbours_mean_dbh: dbh_medio_vecinos  # mean dbh of the neighbour trees      
+    ogs: ogs  # occupied growing space of tree i in year t, computed as the area of the weighted Voronoi region of the tree i restricted by the range of its zone of influence (radius) at time t
+    ags: ags  # area in its surroundings not occupied by neighboring trees and therefore available to that tree to search for light
+    pgs: pgs  # potential growing space of tree i in year t estimated as the crown projection area of an open grown tree of the same dbh
+    rel_area: rel_area  # ratio of the occupied growing space (OGS) of a tree and its potential growing space (PGS) and it is used as a surrogate for the growing capacity of a tree
+
+    # Auxiliar variables for future models - 08/03/2023
+    tree_var1: x
+    tree_var2: x
+    tree_var3: x
+    tree_var4: x
+    tree_var5: x
+    tree_var6: x
+    tree_var7: x
+    tree_var8: x
+    tree_var9: x
+    tree_var10: x
+    tree_var11: x
+    tree_var12: x
+    tree_var13: x
+    tree_var14: x
+    tree_var15: x
+    tree_var16: x
+    tree_var17: x
+    tree_var18: x
+    tree_var19: x
+    tree_var20: x
+    tree_var21: x
+    tree_var22: x
+    tree_var23: x
+    tree_var24: x
+    tree_var25: x
+    tree_var26: x
+    tree_var27: x
+    tree_var28: x
+    tree_var29: x
+    tree_var30: x
+    tree_var31: x
+    tree_var32: x
+    tree_var33: x
+    tree_var34: x
+    tree_var35: x
+    tree_var36: x
+    tree_var37: x
+    tree_var38: x
+    tree_var39: x
+    tree_var40: x
+    tree_var41: x
+    tree_var42: x
+    tree_var43: x
+    tree_var44: x
+    tree_var45: x
+    tree_var46: x
+    tree_var47: x
+    tree_var48: x
+    carbon_heartwood: carbono_duramen
+    carbon_sapwood: carbono_albura
+    carbon_bark: carbono_corteza
+    carbon_stem: carbono_tronco
+    carbon_branches: carbono_ramas
+    carbon_roots: carbono_raices
+    carbon: carbono_total
+    saw_big_liferebollo: v_sierra_gruesa-liferebollo
+    saw_small_liferebollo: v_sierra-liferebollo
+    staves_intona: duelas_intona-liferebollo
+    bottom_staves_intona: duelas_fondos_intona-liferebollo
+    wood_panels_gamiz: madera_laminada_gamiz-liferebollo
+    mix_garcia_varona: varios_garcia_varona-liferebollo
+
+    # Status
+    status: estado  # status of the tree, M-> die, C-> harvested, I-> ingrowth
+
+  warnings:
+
+    SPECIE_ERROR: Error de especie  # That variable will show you a warning message if you try to use a model of one specie with an inventory of another
+    SPECIE_ERROR_TREES: Specie error  # That variable will show you a warning message if you try to use an inventory (on tree models) where the main specie is not represented by trees
+    EXEC_ERROR: Error en la ejecución  # no debería pintarse en la hoja de parcelas, debe permanecer en esta posición en la lista
+    EXEC_ERROR_SUMMARY: Error en la ejecución  # no debería pintarse en la hoja de parcelas, debe permanecer en esta posición en la lista
+    CUT_ERROR: Error en las cortas  # That variable will contain a message to notify in the plot sheet that the time for cuts must be 0
+    CUT_ERROR_SUMMARY: Error en las cortas  # That variable will contain a message a little bit different to show on summary sheet about error on the cuts
+
+  metadata:
+
+    # Webs and links
+    web_sima: Web de SIMANFOR
+    web_iufor: Web de iuFOR
+    link_sima: https://www.simanfor.es/
+    link_iufor: http://sostenible.palencia.uva.es/
+    webs_iufor: iuFOR en la web
+    facebook: Facebook
+    iufor_facebook: https://es-es.facebook.com/youngforesters/
+    twitter: Twitter
+    iufor_twitter: https://twitter.com/youngforesters
+    instagram: Instagram
+    iufor_instagram: https://www.instagram.com/youngforesters/
+    linkedin: LinkedIn
+    iufor_linkedin: https://www.linkedin.com/company/iufor/
+    youtube: Youtube
+    iufor_youtube: https://www.youtube.com/user/ResearchForForestry
+    flickr: Flickr
+    iufor_flickr: https://www.flickr.com/photos/147451313@N04/
+
+    # Headings
+    model: "Modelo empleado:"
+    vars: Historial de variables
+    plot: Variables de Parcela
+    tree: Variables de árbol
+    summary: Variables del resumen
+    plot_type: Variables del diseño de parcela
+    area: Variables de la zona de estudio
+    scenario: Variables de escenario
+    cuts: Variables de corta
+    trees_sheet: Nombre de la hoja de árboles correspondiente a la operación realizada
+
+    # Summary variables
+    sum_age: Edad promedio de la parcela (años)
+    sum_hdom: Altura dominante (m)
+    sum_density_b_cut: Densidad de la masa (nº pies/ha)
+    sum_qmdbh_b_cut: Diámetro medio cuadrático (cm)
+    sum_ba_b_cut: Área basimétrica (m2/ha)
+    sum_vol_b_cut: Volumen de madera con corteza (m3/ha)
+    sum_density_cut: Densidad de la masa (nº pies/ha)
+    sum_qmdbh_cut: Diámetro medio cuadrático (cm)
+    sum_vol_cut: Volumen de madera con corteza (m3/ha)
+    sum_density_a_cut: Densidad de la masa (nº pies/ha)
+    sum_qmdbh_a_cut: Diámetro medio cuadrático (cm)
+    sum_ba_a_cut: Área basimétrica (m2/ha)
+    sum_vol_a_cut: Volumen de madera con corteza (m3/ha)
+    sum_density_dead: Densidad de la masa (nº pies/ha)
+    sum_qmdbh_dead: Diámetro medio cuadrático (cm)
+    sum_vol_dead: Volumen de madera con corteza (m3/ha)
+    sum_density_ing: Densidad de la masa (nº pies/ha)
+    sum_ba_ing: Área basimétrica (m2/ha)
+    stand_before_cut: Masa principal antes de la corta
+    stand_cut: Masa extraída por la corta
+    stand_after_cut: Masa principal después de la corta
+    stand_dead: Masa muerta de manera natural en una ejecución
+    stand_ingrowth: Masa incorporada de manera natural en una ejecución
+    QSUBER_VARS: Producción de corcho para modelos de Quercus suber
+    PPINEA_VARS: Producción de no maderables para modelos de Pinus pinea
+    MUSHROOMS_VARS: Producción de hongos para aquellos modelos a los que están asociados
+
+    # Cuts
+    # cut types
+    Cut Down by Tallest: Corta por lo alto, aplicada eliminando los árboles más gruesos
+    Cut Down by Smallest: Corta por lo bajo, aplicada eliminando los árboles menos gruesos
+    Systematics cut down: Corta sistemática, aplicada eliminando la misma parte proporcional de cada árbol
+    Cut Down by Tallest with Future Trees: Corta por lo alto, aplicada eliminando los árboles más gruesos y conservando una parte de estos como árboles de porvenir
+    Systematics cut down with Future Trees: Corta sistemática, aplicada eliminando la misma parte proporcional de cada árbol y conservando una parte de los más gruesos como árboles de porvenir
+    # cut criterias
+    Percent of trees: Corta aplicando el criterio de porcentaje de árboles
+    Volumen: Corta aplicando el criterio de volumen
+    Area: Corta aplicando el criterio de área basimétrica
+
+######################################################################################################################
+################################################## Model variables ###################################################
+######################################################################################################################
+
+    MODEL_NAME: Nombre del modelo de SIMANFOR que estás utilizando
+    #SPECIE_IFN_ID: Main Specie ID,  (SFI)  # IFN (Spanish National Forestal Inventory) ID of the main specie
+    APLICATION_AREA: Zonas recomendadas para la utilización de este modelo
+    VALID_PROV_REG: Regiones de procedencia de la especie principal para las cuales se recomienda el uso de este modelo
+    EXEC_TIME: Tiempo de ejecución recomendado (años), específico de cada modelo y recomendado por sus autores
+    MODEL_TYPE: Información sobre el tipo de modelo
+    MODEL_CARD_ES: Fichero, en español, donde puedes consultar información importante acerca del modelo que estás utilizando
+    MODEL_CARD_EN: Fichero, en inglés, donde puedes consultar información importante acerca del modelo que estás utilizando
+
+######################################################################################################################
+################################################### Area variables ###################################################
+######################################################################################################################
+
+    # Plot general information
+    PLOT_TYPE: Tipo de parcela utilizada (IFN, circular, rectangular...)
+    PLOT_AREA: Superficie de parcela (m2)
+    PROVINCE: Provincia en la que se ubica la parcela
+    STUDY_AREA: Zona de estudio en la que se ubica la parcela
+    MUNICIPALITY: Municipio en el que se ubica la parcela
+    FOREST: Monte en el que se ubica la parcela
+    PROV_REGION: Región de procedencia (utilizado para especies forestales en España)
+    MAIN_SPECIE: Especies presentes en la parcela
+    SPECIE_IFN_ID: Código identificador de la especie principal según el criterio del Inventario Forestal Nacional de España
+    SLOPE: Pendiente de la parcela (%)  # (%)
+    ASPECT: Orientación de la parcela (rad)  # (rad)
+    CONTINENTALITY: Factor de continentalidad (distancia lineal al mar Mediterráneo en km)  # (linear distance to the Mediterranean sea, km)
+    LONGITUDE: Longitud del centro de la parcela
+    LATITUDE: Latitud del centro de la parcela
+    ALTITUDE: Altitud del centro de la parcela (m sobre el nivel del mar)
+
+    # Cistus ladanifer special variables
+    TR: Variable dummy (igual a 1 si el matorral fue desarrollado en una zona quemada e igual a 0 si fue desarrollado en una zona desbrozada)        
+    TIME_AT: Tiempo tras el tratamiento de desbroce o quema prescrita (años)
+    RAIN_AS: Suma de la precipitación total de agosto y septiembre (mm)
+    TMIN_SO: Suma de las temperaturas mínimas absolutas de septiembre y octubre (ºC)
+    TMIN_ON: Suma de las temperaturas mínimas absolutas de octubre y noviembre (ºC)
+    TMIN_OND: Suma de las temperaturas mínimas absolutas de octubre, noviembre y diciembre (ºC)
+    TMMIN_OCT: Temperatura mínima promedio de octubre (ºC)
+    TSUM_MEAN_SO: Suma de la temperatura media de septiembre y octubre (ºC)
+    TSUM_MMIN_SO: Suma de la temperatura mínima promedio de septiembre y octubre (ºC)
+    TSUM_MMIN_ON: Suma de la temperatura mínima promedio de octubre y noviembre (ºC)
+    TSUM_MMIN_SOND: Suma de la temperatura mínima promedio de septiembre, octubre, noviembre y diciembre (ºC)
+
+######################################################################################################################
+################################################# Scenario variables #################################################
+######################################################################################################################
+
+    # Stage general information
+    file_name: Nombre del archivo de escenario (archivo .json)     
+    scenario_id: Código identificador de cada proceso realizado en el escenario
+    scenario_age: Edad del escenario, que se actualiza tras cada ejecución (años)
+    scenario_action: Actividad que realiza el simulador en cada proceso (Carga Inicial, Inicialización, Ejecución, Corta)
+    scenario_min_age: Edad mínima a partir de la cual el proceso establecido en el escenario se ejecuta (años)
+    scenario_max_age: Edad máxima a partir de la cual el proceso establecido en el escenario se ejecuta (años)
+    action_time: Tiempo de ejecución en cada proceso (años)
+    cut_type: Tipo de corta planificada en el escenario (por lo alto, por lo bajo, sistemática)
+    cut_severity: Intensidad de la corta (%), referido al volumen, área basimétrica o nº de pies antes de la corta
+    cut_criteria: Criterio de corta seleccionado en el escenario (nº de pies, área basimétrica o volumen)
+    preserve_trees: Árboles a conservar por ser considerados árboles de porvenir (mayores dimensiones) con interés de uso comercial futuro (%)
+    species: Especie seleccionada para cortar cuando hay más de una presente en la parcela. Si no se selecciona, se utilizan todas as especies presentes en la parcela.
+    volume_target: Parámetro en el que se especifica sobre qué valor se aplica la intensidad de corta, siendo "plot" o "parcela" para realizar el cálculo sobre los valores de parcela, y "species" o "especies" para los valores de masa de la especie en cuestión. Por defecto se usan valores de parcela.
+
+######################################################################################################################
+################################################### Plot variables ###################################################
+######################################################################################################################
+
+    # IDs
+    INVENTORY_ID: Código identificador de inventario, extraído del inventario inicial
+    PLOT_ID: Código identificador de parcela, extraído del inventario inicial
+
+    # Basic plot variables measured
+    EXPAN: Factor de expansión de la parcela  # expansion factor
+    YEAR: Año en el que transcurre el proceso de simulación
+    AGE: Edad promedio de la parcela (años)  # (years)
+    DENSITY: Densidad de la parcela (nº pies/ha) # (nº trees/ha)
+    DENSITY_CUT_VOLUME: Cantidad de árbol extraídos por la corta (nº pies/ha)  # stand density harvested volume (nº trees/ha)
+    DEAD_DENSITY: Nº de pies muertos tras una ejecución (nº pies/ha)  # Nº of dead trees after an execution (nº trees/ha)
+    ING_DENSITY: Nº de pies incorporados a la parcela tras una ejecución (nº pies/ha)  # Nº of ingrowth trees after an execution (nº trees/ha)
+
+    # Basic plot variables calculated - basal area
+    BASAL_AREA: Área Basimétrica de la parcela (m2/ha)  # (m2/ha)
+    BA_MAX: Área basimétrica individual máxima en la parcela (cm2)  # (cm2)
+    BA_MIN: Área basimétrica individual mínima en la parcela (cm2)  # (cm2)
+    MEAN_BA: Área basimétrica individual promedio en la parcela (cm2)  # (cm2)
+    BA_CUT_VOLUME: Cantidad de área basimétrica extraída por la corta (m2/ha)  # Basal area harvested volume (m2/ha)
+    DEAD_BA: Área basimétrica de los árboles muertos tras una ejecución (m2/ha)
+    ING_BA: Área basimétrica de los árboles incorporados a la parcela tras la ejecución (m2/ha)  # Basal area of ingrowth trees after an execution (m2/ha)
+
+    # Basic plot variables calculated - diameter
+    DBH_MAX: Diámetro normal individual máximo en la parcela (cm)  # (cm)
+    DBH_MIN: Diámetro normal individual mínimo en la parcela (cm)  # (cm)
+    MEAN_DBH: Diámetro normal individual promedio en la parcela (cm)  # (cm)
+    QM_DBH: Diámetro medio cuadrático de la parcela (cm)  # (cm)
+    DOMINANT_DBH: Diámetro dominante de la parcela (cm)  # (cm)
+    DOMINANT_SECTION: Sección dominante de la parcela (cm)
+
+    # Basic plot variables calculated - height
+    H_MAX: Altura individual máxima de la parcela (m)  # (m)
+    H_MIN: Altura individual mínima de la parcela (m)  # (m)
+    MEAN_H: Altura media de los árboles de la parcela (m)  # (m)
+    DOMINANT_H: Altura dominante de la parcela (m)  # (m)
+
+    # Basic plot variables calculated - crown
+    CROWN_MEAN_D: Diámetro de copa promedio (m)  # (m)
+    CROWN_DOM_D: Diámetro de copa dominante (m)  # (m)
+    CANOPY_COVER: Fracción de cabida cubierta (%)  # (%)
+    CANOPY_VOL: Volumen de copa (m3)  # Canopy volume (m3)  
+
+    # Basic plot variables calculated - plot
+    SLENDERNESS_MEAN: Esbeltez, calculada utilizando los valores de altura y diámetro promedio de la parcela 
+    SLENDERNESS_DOM: Esbeltez, calculada utilizando los valores de altura y diámetro dominante de la parcela 
+    REINEKE: Índice de Reineke (SDI)  # Stand Density Index - SDI
+    REINEKE_VALUE: Valor de la constante r del SDI para la especie del modelo (-1.605 por defecto)
+    HART: Índice de Hart-Becking (S) calculado para marco real  # Hart-Becking Index - S
+    HART_STAGGERED: Índice de Hart-Becking (S) calculado para tresbolillo  # Hart-Becking Index - S
+    SI: Índice de sitio (m)  # (m)
+    REF_SI_AGE: Edad de referencia para calcular el Índice de Sitio (años)  # SI reference age (years)
+    HEGYI_RADIUS: Valor de radio (m) para calcular el índice de competencia de Hegyi (0,25*altura por defecto). Si este valor está entre 0 y 1, se multiplicará por la altura del árbol.
+
+    # Plot variables calculated - volume
+    VOL: Volumen de madera con corteza (m3/ha)  # (m3/ha)
+    BOLE_VOL: Volumen de madera sin corteza (m3/ha)  # (m3/ha)
+    BARK_VOL : Volumen de corteza (m3/ha)  # (m3/ha)
+    VOL_CUT_VOLUME: Volumen de madera extraído por la corta (m3/ha)  # (m3/ha)
+    DEAD_VOL: Volumen de madera muerta después de una ejecución (m3/ha)  # Volume of dead trees after an execution (m3/ha)
+    ING_VOL: Volumen de madera de los árboles incorporados a la parcela después de una ejecución (m3/ha)  # Volume of ingrowth trees after an execution (m3/ha)
+
+    # Plot variables calculated - biomass
+    WSW: Biomasa del tronco sin corteza (t/ha)  # wsw = stem wood (t/ha)
+    WSB: Biomasa de la corteza del tronco (t/ha)  # wsb = stem bark (t/ha)
+    WSWB: Biomasa del tronco con corteza (t/ha)  # wswb = stem wood and stem bark (t/ha)
+    WTHICKB: Biomasa de ramas con diámetro > 7 cm en punta delgada (t/ha)  # wthickb = Thick branches > 7 cm (t/ha)
+    WSTB: Biomasa del tronco y ramas con diámetro > 7 cm en punta delgada (t/ha)  # wstb = wsw + wthickb, stem + branches >7 cm (t/ha)
+    WB2_7: Biomasa de ramas con diámetro entre 2 y 7 cm en punta delgada (t/ha)  # wb2_7 = branches (2-7 cm) (t/ha)
+    WB2_T: Biomasa de ramas con diámetro > 2 cm en punta delgada (t/ha)  # wb2_t = wb2_7 + wthickb; branches >2 cm (t/ha)
+    WTHINB: Biomasa de ramas con diámetro entre 0.5 y 2 cm en punta delgada (t/ha)  # wthinb = Thin branches (2-0.5 cm) (t/ha)
+    WB05: Biomasa de ramas con diámetro < 0.5 cm en punta delgada (t/ha)  # wb05 = thinniest branches (<0.5 cm) (t/ha)
+    WB05_7: Biomasa de ramas entre 0.5 y 7 cm en punta delgada (t/ha)  # wb05_7 = branches between 0.5-7 cm (t/ha)
+    WB0_2: Biomasa de ramas menores a 2 cm en punta delgada (t/ha)  # wb0_2 = branches < 2 cm (t/ha)
+    WDB: Biomasa de ramas muertas (t/ha)  # wdb = dead branches biomass (t/ha)
+    WL: Biomasa de hojas (t/ha)  # wl = leaves (t/ha)
+    WTBL: Biomasa de ramas con diámetro < 2 cm en punta delgada y hojas (t/ha)  # wtbl = wthinb + wl; branches <2 cm and leaves (t/ha)
+    WBL0_7: Biomasa de ramas con diámetro < 7 cm en punta delgada y hojas (t/ha)  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (t/ha)
+    WS: Biomasa de todo el tronco con corteza (t/ha)
+    WB: Biomasa de todas las ramas y hojas (t/ha)
+    WR: Biomasa de las raíces (t/ha)  # wr = roots (t/ha)
+    WT: Biomasa total de la parcela, calculada como la suma de todas las anteriores (t/ha)  # wt = biomasa total (t/ha)
+    WT_CUT_VOLUME: Biomasa total de madera extraído por la corta (t/ha)  # WT of the cut trees after a cut process (t/ha)
+    DEAD_WT: Biomasa total de los árboles muertos después de una ejecución (t/ha)  # WT of the dead trees after an execution (t/ha)
+    ING_WT: Biomasa total de los árboles incorporados a la parcela después de una ejecución (t/ha)  # WT of the ingrowth trees after an execution (t/ha)
+
+    # Plot variables calculated - wood uses
+    UNWINDING: Volumen de madera útil para desenrollo (m3/ha)  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER: Volumen de madera útil para chapa (m3/ha)  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG: Volumen de madera útil para sierra gruesa (m3/ha)  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL: Volumen de madera útil para sierra (m3/ha)  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER: Volumen de madera útil para sierra cánter (m3/ha)  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST: Volumen de madera útil para postes (m3/ha)  # post = useful volume for post destiny (m3/ha)
+    STAKE: Volumen de madera útil para estacas (m3/ha)  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS: Volumen de madera útil para trituración (m3/ha)  # chips = useful volume for chips destiny (m3/ha)
+
+    # Species Diversity Indexes
+    SHANNON: Índice de Diversidad de Shannon-Weaver. Este índice se representa normalmente como H' y se expresa con un número positivo, que en la mayoría de los ecosistemas naturales varía entre 0.5 y 5, aunque su valor típico está entre 2 y 3. Valores por debajo de 2 se consideran bajos en diversidad, y valores por encima de 3 indican alta diversidad de especies.
+    SIMPSON: Índice de Diversidad de Simpson - versión modificada. Esta versión del índice tiene valores que van de 0 a 1. Sin embargo, ahora, cuanto mayor sea el valor, mayor será la diversidad de su muestra. Este valor representa la probabilidad de que dos individuos seleccionados aleatoriamente de una muestra pertenezcan a diferentes especies.
+    MARGALEF: Índice de Diversidad Específica de Margalef. Valores por debajo de 2 generalmente se refieren a ecosistemas con poca biodiversidad (afectados por humanos), mientras que valores por encima de 5 indican alta biodiversidad.
+    PIELOU: Índice de Diversidad de Pielou. Mide la proporción de la diversidad observada con relación a la máxima diversidad esperada. Su valor va de 0 a 1, de forma que 1 corresponde a situaciones donde todas las especies son igualmente abundantes, y 0 indica la ausencia de uniformidad.
+
+    # Quercus suber special variables
+    W_CORK: Biomasa de corcho fresco (t/ha)  # w_cork = fresh cork biomass (t/ha)
+    TOTAL_W_DEBARK: Biomasa total de corcho (t/ha) extraída con labores de descorche
+    TOTAL_V_DEBARK: Volume total de corcho (m3/ha) extraído con labores de descorche
+
+    # Pinus pinea special variables
+    ALL_CONES: Valor promedio de la producción anual de piñas por hectárea  # total of cones of the plot (anual mean)
+    SOUND_CONES: Valor promedio de la producción anual de piñas sanas por hectárea  # total sound (healthy) cones of the plot (anual mean)
+    SOUND_SEEDS: Valor promedio de la producción anual de semillas sanas por hectárea  # total sound (healthy) seeds of the plot (anual mean)
+    W_SOUND_CONES: Valor promedio de la biomasa anual producida de piñas sanas por hectárea (t/ha)  # weight of sound (healthy) cones (t/ha) (anual mean)
+    W_ALL_CONES: Valor promedio de la biomasa anual producida de piñas por hectárea (t/ha)  # weight of all (healthy and not) cones (t/ha) (anual mean)
+
+    # Mushrooms special variables
+    EDIBLE_MUSH: Producción anual de especies comestibles de setas (valor promedio) (kg/ha)  # annual mushroom production of edible species (mean value) (kg/ha)
+    MARKETED_MUSH: Producción anual de especies comerciales de setas (valor promedio) (kg/ha)  # annual mushroom production of marketed species (mean value) (kg/ha)
+    MARKETED_LACTARIUS: Producción anual de especies comerciales de lactarius (valor promedio) (kg/ha)  # production of marketed Lactarius (kg/ha*year)
+    MUSHROOM_PRODUCTIVITY: Producción de setas anual en peso fresco (kg/ha)
+    
+    # Cistus ladanifer special variables
+    B_EDULIS: Producción anual de esporocarpos de Boletus edulis (kg/ha*año)
+    MYCOD: Índice de diversidad de Shannon para taxones micorrícicos
+    MYCOP: Producción anual de hongos de todas las especies micorrícicas (kg/ha*año)
+    SAPROD: Índice de diversidad de Shannon para hongos sapŕofitos
+    SAPROP: Producción anual de todas las especies saprófitas (kg/ha*año)
+
+######################################################################################################################
+########################################### Plot variables for mixed models ##########################################
+######################################################################################################################
+
+    # MIXED MODELS
+    # General data
+    ID_SP1: Código identificador de la especie 1 en masas mixtas, según el criterio del IFN (Inventario Forestal Nacional (España))
+    SP1_PROPORTION: Proporción de la especie 1 para masas mixtas (%)
+    DENSITY_SP1: Densidad (N) de la especie 1 por hectárea (nº trees/ha) en masas mixtas
+    BASAL_AREA_SP1: Área basimétrica (G) de la especie 1 en masas mixtas
+    BA_MAX_SP1: Área basimétrica individual máxima en la parcela (cm2) para la especie 1 en masas mixtas
+    BA_MIN_SP1: Área basimétrica individual mínima en la parcela (cm2) para la especie 1 en masas mixtas
+    MEAN_BA_SP1: Área basimétrica individual promedio en la parcela (cm2) para la especie 1 en masas mixtas
+    QM_DBH_SP1: Diámetro medio cuadrático (dg) de la especie 1 en masas mixtas
+    DBH_MAX_SP1: Diámetro normal individual máximo en la parcela (cm) para la especie 1 en masas mixtas
+    DBH_MIN_SP1: Diámetro normal individual mínimo en la parcela (cm) para la especie 1 en masas mixtas
+    MEAN_DBH_SP1: Diámetro normal individual promedio en la parcela (cm) para la especie 1 en masas mixtas
+    DOMINANT_SECTION_SP1: Sección dominante de la parcela (cm) para la especie 1 en masas mixtas
+    DOMINANT_DBH_SP1: Diámetro dominante (Do) de la especie 1 (cm) en masas mixtas
+    DOMINANT_H_SP1: Altura dominante (Ho) para la especie 1 en masas mixtas
+    H_MAX_SP1: Altura individual máxima de la parcela (m) para la especie 1 en masas mixtas
+    H_MIN_SP1: Altura individual mínima de la parcela (m) para la especie 1 en masas mixtas
+    MEAN_H_SP1: Altura individual promedio de la parcela (m) para la especie 1 en masas mixtas
+    REINEKE_SP1: Índice de Reineke (SDI) para la especie 1 en masas mixtas
+    REINEKE_MAX_SP1: Índice de Reineke máximo (SDImax) para la especie 1 en masas mixtas
+
+    ID_SP2: Código identificador de la especie 2 en masas mixtas, según el criterio del IFN (Inventario Forestal Nacional (España))
+    SP2_PROPORTION: Proporción de la especie 2 para masas mixtas (%)
+    DENSITY_SP2: Densidad (N) de la especie 2 por hectárea (nº trees/ha) en masas mixtas
+    BASAL_AREA_SP2: Área basimétrica (G) de la especie 2 en masas mixtas
+    BA_MAX_SP2: Área basimétrica individual máxima en la parcela (cm2) para la especie 2 en masas mixtas
+    BA_MIN_SP2: Área basimétrica individual mínima en la parcela (cm2) para la especie 2 en masas mixtas
+    MEAN_BA_SP2: Área basimétrica individual promedio en la parcela (cm2) para la especie 2 en masas mixtas
+    QM_DBH_SP2: Diámetro medio cuadrático (dg) de la especie 2 en masas mixtas
+    DBH_MAX_SP2: Diámetro normal individual máximo en la parcela (cm) para la especie 2 en masas mixtas
+    DBH_MIN_SP2: Diámetro normal individual mínimo en la parcela (cm) para la especie 2 en masas mixtas
+    MEAN_DBH_SP2: Diámetro normal individual promedio en la parcela (cm) para la especie 2 en masas mixtas
+    DOMINANT_SECTION_SP2: Sección dominante de la parcela (cm) para la especie 2 en masas mixtas
+    DOMINANT_DBH_SP2: Diámetro dominante (Do) de la especie 2 (cm) en masas mixtas
+    DOMINANT_H_SP2: Altura dominante (Ho) para la especie 2 en masas mixtas
+    H_MAX_SP2: Altura individual máxima de la parcela (m) para la especie 2 en masas mixtas
+    H_MIN_SP2: Altura individual mínima de la parcela (m) para la especie 2 en masas mixtas
+    MEAN_H_SP2: Altura individual promedio de la parcela (m) para la especie 2 en masas mixtas
+    REINEKE_SP2: Índice de Reineke (SDI) para la especie 2 en masas mixtas
+    REINEKE_MAX_SP2: Índice de Reineke máximo (SDImax) para la especie 2 en masas mixtas    
+
+    AA_RAINFALL: Precipitación media anual (mm)
+    MA_TEMPERATURE: Temperatura media anual (ºC)
+    SEPTEMBER_RAIN: Precipitacion de septiembre (mm)
+    SEPTEMBER_TEMP: Temperatura media de septiembre (ºC)
+    NOVEMBER_RAIN: Precipitacion de noviembre (mm)
+    NOVEMBER_TEMP: Temperatura media de noviembre (ºC)      
+    MARTONNE: Índice de Martonne
+    MARTONNE_2020: Índice de Martonne, calculado para el momento 1. Se aplicará sobre los cálculos del modelo desde el inicio de la simulación hasta el año 2020
+    MARTONNE_2040: Índice de Martonne, calculado para el momento 2. Se aplicará sobre los cálculos del modelo desde el año 2020 hasta el año 2040
+    MARTONNE_2060: Índice de Martonne, calculado para el momento 3. Se aplicará sobre los cálculos del modelo desde el año 2040 hasta el año 2060
+    MARTONNE_2080: Índice de Martonne, calculado para el momento 4. Se aplicará sobre los cálculos del modelo desde el año 2060 en adelante 
+
+    # Crown
+    CROWN_MEAN_D_SP1: Diámetro de copa promedio (m) para la especie 1 en masas mixtas  # (m)
+    CROWN_DOM_D_SP1: Diámetro de copa dominante (m) para la especie 1 en masas mixtas  # (m)
+    CANOPY_COVER_SP1: Fracción de cabida cubierta (%) para la especie 1 en masas mixtas  # (%)
+    CANOPY_VOL_SP1: Volumen de copa (m3) para la especie 1 en masas mixtas  # Canopy volume (m3)  
+
+    CROWN_MEAN_D_SP2: Diámetro de copa promedio (m) para la especie 2 en masas mixtas  # (m)
+    CROWN_DOM_D_SP2: Diámetro de copa dominante (m) para la especie 2 en masas mixtas # (m)
+    CANOPY_COVER_SP2: Fracción de cabida cubierta (%) para la especie 2 en masas mixtas  # (%)      
+    CANOPY_VOL_SP2: Volumen de copa (m3) para la especie 2 en masas mixtas  # Canopy volume (m3) 
+
+    # Biomass
+    WSW_SP1: Biomasa del tronco sin corteza (t/ha) para la especie 1 en masas mixtas  # wsw = stem wood (t/ha)
+    WSB_SP1: Biomasa de la corteza del tronco (t/ha) para la especie 1 en masas mixtas  # wsb = stem bark (t/ha)
+    WSWB_SP1: Biomasa del tronco con corteza (t/ha) para la especie 1 en masas mixtas  # wswb = stem wood and stem bark (t/ha)
+    WTHICKB_SP1: Biomasa de ramas con diámetro > 7 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wthickb = Thick branches > 7 cm (t/ha)
+    WSTB_SP1: Biomasa del tronco y ramas con diámetro > 7 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wstb = wsw + wthickb, stem + branches >7 cm (t/ha)
+    WB2_7_SP1: Biomasa de ramas con diámetro entre 2 y 7 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wb2_7 = branches (2-7 cm) (t/ha)
+    WB2_T_SP1: Biomasa de ramas con diámetro > 2 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wb2_t = wb2_7 + wthickb; branches >2 cm (t/ha)
+    WTHINB_SP1: Biomasa de ramas con diámetro entre 0.5 y 2 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wthinb = Thin branches (2-0.5 cm) (t/ha)
+    WB05_SP1: Biomasa de ramas con diámetro < 0.5 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wb05 = thinniest branches (<0.5 cm) (t/ha)
+    WB05_7_SP1: Biomasa de ramas entre 0.5 y 7 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wb05_7 = branches between 0.5-7 cm (t/ha)
+    WB0_2_SP1: Biomasa de ramas menores a 2 cm en punta delgada (t/ha) para la especie 1 en masas mixtas  # wb0_2 = branches < 2 cm (t/ha)
+    WDB_SP1: Biomasa de ramas muertas (t/ha) para la especie 1 en masas mixtas  # wdb = dead branches biomass (t/ha)
+    WL_SP1: Biomasa de hojas (t/ha) para la especie 1 en masas mixtas  # wl = leaves (t/ha)
+    WTBL_SP1: Biomasa de ramas con diámetro < 2 cm en punta delgada y hojas (t/ha) para la especie 1 en masas mixtas  # wtbl = wthinb + wl; branches <2 cm and leaves (t/ha)
+    WBL0_7_SP1: Biomasa de ramas con diámetro < 7 cm en punta delgada y hojas (t/ha) para la especie 1 en masas mixtas  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (t/ha)
+    WR_SP1: Biomasa de las raíces (t/ha) para la especie 1 en masas mixtas  # wr = roots (t/ha)
+    WT_SP1: Biomasa total de la parcela, calculada como la suma de todas las anteriores (t/ha) para la especie 1 en masas mixtas  # wt = biomasa total (t/ha)
+    
+    WSW_SP2: Biomasa del tronco sin corteza (t/ha) para la especie 2 en masas mixtas  # wsw = stem wood (t/ha)
+    WSB_SP2: Biomasa de la corteza del tronco (t/ha) para la especie 2 en masas mixtas  # wsb = stem bark (t/ha)
+    WSWB_SP2: Biomasa del tronco con corteza (t/ha) para la especie 2 en masas mixtas  # wswb = stem wood and stem bark (t/ha)
+    WTHICKB_SP2: Biomasa de ramas con diámetro > 7 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wthickb = Thick branches > 7 cm (t/ha)
+    WSTB_SP2: Biomasa del tronco y ramas con diámetro > 7 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wstb = wsw + wthickb, stem + branches >7 cm (t/ha)
+    WB2_7_SP2: Biomasa de ramas con diámetro entre 2 y 7 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wb2_7 = branches (2-7 cm) (t/ha)
+    WB2_T_SP2: Biomasa de ramas con diámetro > 2 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wb2_t = wb2_7 + wthickb; branches >2 cm (t/ha)
+    WTHINB_SP2: Biomasa de ramas con diámetro entre 0.5 y 2 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wthinb = Thin branches (2-0.5 cm) (t/ha)
+    WB05_SP2: Biomasa de ramas con diámetro < 0.5 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wb05 = thinniest branches (<0.5 cm) (t/ha)
+    WB05_7_SP2: Biomasa de ramas entre 0.5 y 7 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wb05_7 = branches between 0.5-7 cm (t/ha)
+    WB0_2_SP2: Biomasa de ramas menores a 2 cm en punta delgada (t/ha) para la especie 2 en masas mixtas  # wb0_2 = branches < 2 cm (t/ha)
+    WDB_SP2: Biomasa de ramas muertas (t/ha) para la especie 2 en masas mixtas  # wdb = dead branches biomass (t/ha)
+    WL_SP2: Biomasa de hojas (t/ha) para la especie 2 en masas mixtas  # wl = leaves (t/ha)
+    WTBL_SP2: Biomasa de ramas con diámetro < 2 cm en punta delgada y hojas (t/ha) para la especie 2 en masas mixtas  # wtbl = wthinb + wl; branches <2 cm and leaves (t/ha)
+    WBL0_7_SP2: Biomasa de ramas con diámetro < 7 cm en punta delgada y hojas (t/ha) para la especie 2 en masas mixtas  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (t/ha)
+    WR_SP2: Biomasa de las raíces (t/ha) para la especie 2 en masas mixtas  # wr = roots (t/ha)
+    WT_SP2: Biomasa total de la parcela, calculada como la suma de todas las anteriores (t/ha) para la especie 2 en masas mixtas  # wt = biomasa total (t/ha)
+ 
+    # Volume
+    VOL_SP1: Volumen de madera con corteza (m3/ha) para la especie 1 en masas mixtas  # (m3/ha)
+    BOLE_VOL_SP1: Volumen de madera sin corteza (m3/ha) para la especie 1 en masas mixtas  # (m3/ha)
+    BARK_VOL_SP1: Volumen de corteza (m3/ha) para la especie 1 en masas mixtas  # (m3/ha)
+
+    VOL_SP2: Volumen de madera con corteza (m3/ha) para la especie 2 en masas mixtas  # (m3/ha)
+    BOLE_VOL_SP2: Volumen de madera sin corteza (m3/ha) para la especie 2 en masas mixtas  # (m3/ha)
+    BARK_VOL_SP2: Volumen de corteza (m3/ha) para la especie 2 en masas mixtas  # (m3/ha)
+    
+    # Merchantable variables
+    UNWINDING_SP1: Volumen de madera útil para desenrollo (m3/ha) para la especie 1 en masas mixtas  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER_SP1: Volumen de madera útil para chapa (m3/ha) para la especie 1 en masas mixtas  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG_SP1: Volumen de madera útil para sierra gruesa (m3/ha) para la especie 1 en masas mixtas  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL_SP1: Volumen de madera útil para sierra (m3/ha) para la especie 1 en masas mixtas  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER_SP1: Volumen de madera útil para sierra cánter (m3/ha) para la especie 1 en masas mixtas  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST_SP1: Volumen de madera útil para postes (m3/ha) para la especie 1 en masas mixtas  # post = useful volume for post destiny (m3/ha)
+    STAKE_SP1: Volumen de madera útil para estacas (m3/ha) para la especie 1 en masas mixtas  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS_SP1: Volumen de madera útil para trituración (m3/ha) para la especie 1 en masas mixtas  # chips = useful volume for chips destiny (m3/ha)
+
+    UNWINDING_SP2: Volumen de madera útil para desenrollo (m3/ha) para la especie 2 en masas mixtas  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER_SP2: Volumen de madera útil para chapa (m3/ha) para la especie 2 en masas mixtas  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG_SP2: Volumen de madera útil para sierra gruesa (m3/ha) para la especie 2 en masas mixtas  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL_SP2: Volumen de madera útil para sierra (m3/ha) para la especie 2 en masas mixtas  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER_SP2: Volumen de madera útil para sierra cánter (m3/ha) para la especie 2 en masas mixtas  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST_SP2: Volumen de madera útil para postes (m3/ha) para la especie 2 en masas mixtas  # post = useful volume for post destiny (m3/ha)
+    STAKE_SP2: Volumen de madera útil para estacas (m3/ha) para la especie 2 en masas mixtas  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS_SP2: Volumen de madera útil para trituración (m3/ha) para la especie 2 en masas mixtas  # chips = useful volume for chips destiny (m3/ha)
+
+    UNWINDING_SP3: Volumen de madera útil para desenrollo (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # unwinding = useful volume for unwinding destiny (m3/ha)
+    VENEER_SP3: Volumen de madera útil para chapa (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # veneer = useful volume for veneer destiny (m3/ha)
+    SAW_BIG_SP3: Volumen de madera útil para sierra gruesa (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # saw_big = useful volume for big saw destiny (m3/ha)
+    SAW_SMALL_SP3: Volumen de madera útil para sierra (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # saw_small = useful volume for small saw destiny (m3/ha)
+    SAW_CANTER_SP3: Volumen de madera útil para sierra cánter (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # saw_canter = useful volume for canter saw destiny (m3/ha)
+    POST_SP3: Volumen de madera útil para postes (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # post = useful volume for post destiny (m3/ha)
+    STAKE_SP3: Volumen de madera útil para estacas (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # stake = useful volume for stake destiny (m3/ha)
+    CHIPS_SP3: Volumen de madera útil para trituración (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # chips = useful volume for chips destiny (m3/ha)
+
+    # Auxiliar variables for future models - 08/03/2023
+    PLOT_VAR1: x
+    PLOT_VAR2: x
+    PLOT_VAR3: x
+    PLOT_VAR4: x
+    PLOT_VAR5: x
+    PLOT_VAR6: x
+    PLOT_VAR7: x
+    PLOT_VAR8: x
+    PLOT_VAR9: x
+    PLOT_VAR10: x
+    PLOT_VAR11: x
+    PLOT_VAR12: x
+    PLOT_VAR13: x
+    PLOT_VAR14: x
+    PLOT_VAR15: x
+    PLOT_VAR16: x
+    PLOT_VAR17: x
+    PLOT_VAR18: x
+    PLOT_VAR19: x
+    PLOT_VAR20: x
+    PLOT_VAR21: x
+    PLOT_VAR22: x
+    PLOT_VAR23: x
+    PLOT_VAR24: x
+    PLOT_VAR25: x
+    PLOT_VAR26: x
+    PLOT_VAR27: x
+    PLOT_VAR28: x
+    PLOT_VAR29: x
+    PLOT_VAR30: x
+    PLOT_VAR31: x
+    PLOT_VAR32: x
+    PLOT_VAR33: x
+    PLOT_VAR34: x
+    PLOT_VAR35: x
+    PLOT_VAR36: x
+    PLOT_VAR37: x
+    PLOT_VAR38: x
+    PLOT_VAR39: x
+    PLOT_VAR40: x
+    PLOT_VAR41: x
+    PLOT_VAR42: x
+    PLOT_VAR43: x
+    PLOT_VAR44: x
+    PLOT_VAR45: x
+    PLOT_VAR46: x
+    PLOT_VAR47: x
+    PLOT_VAR48: x
+    VOL_SP3: Volumen de madera con corteza (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # (m3/ha)
+    BOLE_VOL_SP3: Volumen de madera sin corteza (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # (m3/ha)
+    BARK_VOL_SP3: Volumen de corteza (m3/ha) para las especies diferentes a 1 y 2 en masas mixtas  # (m3/ha)
+    CARBON_STEM_SP1: Carbono del tronco con corteza (t/ha) para la especie 1 en masas mixtas
+    CARBON_BRANCHES_SP1: Carbono de todas las ramas y hojas (t/ha) para la especie 1 en masas mixtas
+    CARBON_ROOTS_SP1: Carbono de las raíces (t/ha) para la especie 1 en masas mixtas
+    CARBON_SP1: Carbono total (t/ha) para la especie 1 en masas mixtas
+    CARBON_STEM_SP2: Carbono del tronco con corteza (t/ha) para la especie 2 en masas mixtas
+    CARBON_BRANCHES_SP2: Carbono de todas las ramas y hojas (t/ha) para la especie 2 en masas mixtas
+    CARBON_ROOTS_SP2: Carbono de las raíces (t/ha) para la especie 2 en masas mixtas
+    CARBON_SP2: Carbono total (t/ha) para la especie 2 en masas mixtas
+    CARBON_STEM_SP3: Carbono del tronco con corteza (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    CARBON_BRANCHES_SP3: Carbono de todas las ramas y hojas (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    CARBON_ROOTS_SP3: Carbono de las raíces (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    CARBON_SP3: Carbono total (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    WS_SP3: Biomasa del tronco con corteza (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    WB_SP3: Biomasa de todas las ramas y hojas (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    WR_SP3: Biomasa de las raíces (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    WT_SP3: Biomasa total calculada como la suma de todas las anteriores (t/ha) para las especies diferentes a 1 y 2 en masas mixtas
+    WS_SP2: Biomasa del tronco con corteza (t/ha) para la especie 2 en masas mixtas
+    WB_SP2: Biomasa de todas las ramas y hojas (t/ha) para la especie 2 en masas mixtas
+    WS_SP1: Biomasa del tronco con corteza (t/ha) para la especie 1 en masas mixtas
+    WB_SP1: Biomasa de todas las ramas y hojas (t/ha) para la especie 1 en masas mixtas
+    # following definitions are from the LiDAR metrics: https://github.com/r-lidar/lidR/wiki/stdmetrics
+    ZPCUM9: (LiDAR) porcentaje acumulativo de retorno en la novena capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM8: (LiDAR) porcentaje acumulativo de retorno en la octava capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM7: (LiDAR) porcentaje acumulativo de retorno en la séptima capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM6: (LiDAR) porcentaje acumulativo de retorno en la sexta capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM5: (LiDAR) porcentaje acumulativo de retorno en la quinta capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM4: (LiDAR) porcentaje acumulativo de retorno en la cuarta capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM3: (LiDAR) porcentaje acumulativo de retorno en la tercera capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM2: (LiDAR) porcentaje acumulativo de retorno en la segunda capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZPCUM1: (LiDAR) porcentaje acumulativo de retorno en la primera capa según Wood et al. 2008 (ver métricas denominadas d1, d2, ...)
+    ZQ95: (LiDAR) percentil 95 (cuantil) de la distribución de alturas
+    ZQ90: (LiDAR) percentil 90 (cuantil) de la distribución de alturas
+    ZQ85: (LiDAR) percentil 85 (cuantil) de la distribución de alturas
+    ZQ80: (LiDAR) percentil 80 (cuantil) de la distribución de alturas
+    ZQ75: (LiDAR) percentil 75 (cuantil) de la distribución de alturas
+    ZQ70: (LiDAR) percentil 70 (cuantil) de la distribución de alturas
+    ZQ65: (LiDAR) percentil 65 (cuantil) de la distribución de alturas
+    ZQ60: (LiDAR) percentil 60 (cuantil) de la distribución de alturas
+    ZQ55: (LiDAR) percentil 55 (cuantil) de la distribución de alturas
+    ZQ50: (LiDAR) percentil 50 (cuantil) de la distribución de alturas
+    ZQ45: (LiDAR) percentil 45 (cuantil) de la distribución de alturas
+    ZQ40: (LiDAR) percentil 40 (cuantil) de la distribución de alturas
+    ZQ35: (LiDAR) percentil 35 (cuantil) de la distribución de alturas
+    ZQ30: (LiDAR) percentil 30 (cuantil) de la distribución de alturas
+    ZQ25: (LiDAR) percentil 25 (cuantil) de la distribución de alturas
+    ZQ20: (LiDAR) percentil 20 (cuantil) de la distribución de alturas
+    ZQ15: (LiDAR) percentil 15 (cuantil) de la distribución de alturas
+    ZQ10: (LiDAR) percentil 10 (cuantil) de la distribución de alturas
+    ZQ5: (LiDAR) percentil 5 (cuantil) de la distribución de alturas
+    PZABOVE2: (LiDAR) porcentaje de retornos por encima de 2 m
+    PZABOVEZMEAN: (LiDAR) porcentaje de retornos por encima de zmean
+    ZENTROPY: (LiDAR) entropía de la distribución de alturas
+    ZKURT: (LiDAR) curtosis de la distribución de alturas
+    ZSKEW: (LiDAR) sesgo de la distribución de alturas
+    ZSD: (LiDAR) desviación estándar de la distribución de alturas
+    ZMEAN: (LiDAR) altura media
+    ZMAX: (LiDAR) altura máxima
+    SP3_N_PROPORTION: Proporción de especies diferentes a 1 y 2 en una parcela mixta basada en densidad (%)
+    SP2_N_PROPORTION: Proporción de especie 2 en una parcela mixta basada en densidad (%)
+    SP1_N_PROPORTION: Proporción de especie 1 en una parcela mixta basada en densidad (%)
+    BASAL_AREA_SP3: Área basal (G) de especies diferentes a 1 y 2 en una parcela mixta en modelos mixtos
+    QM_DBH_SP3: Diámetro cuadrático medio (dg) de especies diferentes a 1 y 2 en modelos mixtos
+    DENSITY_SP3: Densidad (N) de especies diferentes a 1 y 2 por hectárea (nº árboles/ha) en modelos mixtos
+    MEAN_H_SP3: Valor medio de la altura del árbol individual de la parcela (m) para especies diferentes a 1 y 2 en modelos mixtos
+    H_MIN_SP3: Valor mínimo de la altura del árbol individual de la parcela (m) para especies diferentes a 1 y 2 en modelos mixtos
+    H_MAX_SP3: Valor máximo de la altura del árbol individual de la parcela (m) para especies diferentes a 1 y 2 en modelos mixtos
+    MEAN_DBH_SP3: Valor medio del diámetro del árbol individual de la parcela (cm) para especies diferentes a 1 y 2 en modelos mixtos
+    DBH_MIN_SP3: Valor mínimo del diámetro del árbol individual de la parcela (cm) para especies diferentes a 1 y 2 en modelos mixtos
+    DBH_MAX_SP3: Valor máximo del diámetro del árbol individual de la parcela (cm) para especies diferentes a 1 y 2 en modelos mixtos
+    MEAN_BA_SP3: Valor medio del área basal del árbol individual de la parcela (cm2) para especies diferentes a 1 y 2 en modelos mixtos
+    BA_MIN_SP3: Valor mínimo del área basal del árbol individual de la parcela (cm2) para especies diferentes a 1 y 2 en modelos mixtos
+    BA_MAX_SP3: Valor máximo del área basal del árbol individual de la parcela (cm2) para especies diferentes a 1 y 2 en modelos mixtos
+    DOMINANT_SECTION_SP3: Sección dominante de la parcela (cm) para especies diferentes a 1 y 2 en modelos mixtos
+    DOMINANT_DBH_SP3: Diámetro dominante (Do) de especies diferentes a 1 y 2 (cm) en modelos mixtos
+    DOMINANT_H_SP3: Altura dominante (Ho) de especies diferentes a 1 y 2 en modelos mixtos
+    CARBON_HEARTWOOD: Contenido de carbono del duramen a nivel de masa (t/ha)
+    CARBON_SAPWOOD: Contenido de carbono de la albura a nivel de masa (t/ha)
+    CARBON_BARK: Contenido de carbono de la corteza a nivel de masa (t/ha)
+    CARBON_STEM: Contenido de carbono fijado en el tronco de los árboles vivos de la parcela (t/ha)
+    CARBON_BRANCHES: Contenido de carbono fijado en las ramas de los árboles vivos de la parcela (t/ha)
+    CARBON_ROOTS: Contenido de carbono fijado en las raíces de los árboles vivos de la parcela (t/ha)
+    CARBON: Contenido de carbono total fijado en los árboles vivos de la parcela (t/ha)
+    DEADWOOD_INDEX_CESEFOR_G: Este Índice de Biodiversidad de Madera Muerta (Deadwood Biodiversity Index) fue desarrollado por CESEFOR. Considera la cantidad de madera muerta en rodales con un diámetro medio cuadrático (dg) mayor o igual a 17.5 cm. Si el área basimétrica del rodal con madera muerta supera el 6% de los árboles con un diámetro a la altura del pecho (dbh) de 17.5 cm o más, el estado de madera muerta del rodal se clasifica como positivo (1). Si el porcentaje es menor, se considera insuficiente (0). Este índice no se aplica a rodales con un dg inferior a 17.5 cm (-).
+    DEADWOOD_INDEX_CESEFOR_V: Este Índice de Biodiversidad de Madera Muerta (Deadwood Biodiversity Index) fue desarrollado por CESEFOR. Considera la cantidad de madera muerta en rodales con un diámetro medio cuadrático (dg) mayor o igual a 17.5 cm. Si el volumen del rodal con madera muerta supera el 6% de los árboles con un diámetro a la altura del pecho (dbh) de 17.5 cm o más, el estado de madera muerta del rodal se clasifica como positivo (1). Si el porcentaje es menor, se considera insuficiente (0). Este índice no se aplica a rodales con un dg inferior a 17.5 cm (-).
+    SAW_BIG_LIFEREBOLLO: Volumen de madera útil para sierra gruesa bajo las condiciones especificadas en el proyecto LIFE-Rebollo (m3/ha)
+    SAW_SMALL_LIFEREBOLLO: Volumen de madera útil para sierra bajo las condiciones especificadas en el proyecto LIFE-Rebollo (m3/ha)
+    STAVES_INTONA: Volumen de madera útil para duelas de la empresa INTONA bajo las condiciones especificadas en el proyecto LIFE-Rebollo (m3/ha)
+    BOTTOM_STAVES_INTONA: Volumen de madera útil para duelas del fondo del barril de la empresa INTONA bajo las condiciones especificadas en el proyecto LIFE-Rebollo (m3/ha)
+    WOOD_PANELS_GAMIZ: Volumen de madera útil para madera laminada de la empresa GAMIZ bajo las condiciones especificadas en el proyecto LIFE-Rebollo (m3/ha)
+    MIX_GARCIA_VARONA: Volumen de madera útil para varios destinos de la empresa GARCÍA VARONA bajo las condiciones especificadas en el proyecto LIFE-Rebollo (m3/ha)
+
+######################################################################################################################
+################################################## Warning variables #################################################
+######################################################################################################################
+
+    SPECIE_ERROR: TEN CUIDADO! Estás intentando utilizar un inventario en el que la especie principal es diferente a la del modelo. Revisa el escenario y haz los cambios oportunos antes de ejecutar el simulador de nuevo.  # That variable will show you a warning message if you try to use a model of one specie with an inventory of another
+    SPECIE_ERROR_TREES: TEN CUIDADO! Estás intentando utilizar un inventario en el que la especie principal de la hoja parcelas no tiene árboles de la misma especie en la hoja de árboles. Por favor, corrige este error en tu inventario inicial y ejecuta el simulador de nuevo.  # That variable will show you a warning message if you try to use an inventory (on tree models) where the main specie is not represented by trees
+    EXEC_ERROR: TEN CUIDADO! Los valores de tiempo de tus ejecuciones no se corresponden con los del modelo! Las líneas rojas están subrayando las zonas en las que los datos no son correctos. Por favor, cambia las condiciones de la ejecución por las recomendadas para este modelo y haz funcionar el simulador de nuevo
+    EXEC_ERROR_SUMMARY: TEN CUIDADO! Los valores de tiempo de tus ejecuciones no se corresponden con los del modelo! Revisa la hoja de parcelas para más información
+    CUT_ERROR: TEN CUIDADO! El valor de tiempo para las cortas que has planificado no es correcto! Las líneas rojas están subrayando las zonas en las que los datos no son correctos. Por favor, cambia los valores de tiempo en las cortas a 0 y haz funcionar el simulador de nuevo  # That variable will contain a message to notify in the output that the time for cuts must be 0
+    CUT_ERROR_SUMMARY: TEN CUIDADO! El valor de tiempo para las cortas que has planificado no es correcto! Revisa la hoja de parcelas para más información  # That variable will contain a message a little bit different to show on summary sheet about error on the cuts
+
+######################################################################################################################
+################################################### Tree variables ###################################################
+######################################################################################################################
+
+    # IDs
+    TREE_ID: Código identificador de árbol, extraído del inventario inicial
+
+    # Special TREE_IDs to work with the IFN data
+    TREE_ID_IFN3_2: Tree ID para árboles muestreados en el IFN3 (nArbol es el nombre original)
+    TREE_ID_IFN3: Tree ID para árboles muestreados en el IFN3, sin tener en cuenta los números de árbol del IFN2; árboles muertos tienen ID 888 (OrdenIf3 es el nombre original)
+    TREE_ID_IFN2: Tree ID para árboles muestreados en el IFN2, correspondiendo con el mismo número de árbol del IFN2; árboles incorporados tienen ID 0 (OrdenIf2 es el nombre original)
+    TREE_ID_compare: Tree ID especial creado para identificar el mismo árbol en ambos IFN, uniendo PLOT_ID y TREE_ID_IFN2 de la base de datos original del IFN3
+
+    # Tree general information
+    number_of_trees: Número de individuos
+    specie: Especie, siguiendo la codificación del Inventario Forestal Nacional de España
+    bearing: Rumbo, calculado desde el centro de la parcela hasta el árbol en cuestión, en grado centesimales. La medición se hace partiendo del norte y en el sentido de las agujas del reloj  # bearing from the tree to the central point of the plot ('rumbo')
+    distance: Distancia, calculada desde el centro de la parcela hasta el árbol en cuestión (m)  # distance from the tree to the central point of the plot           
+    quality: Código de calidad del árbol (IFN)
+    shape: Código en función de la forma de cubicación del árbol (IFN)
+    special_param: Parámetros especiales (IFN)
+    remarks: Observaciones
+    age_130: Edad del árbol, estimada mediante barrenado a 1.30 m (años)  # (years)
+    social_class: Clase sociológica del árbol
+    tree_age: Edad del árbol (años)  # (years)
+    coord_x: Coordenada X del árbol
+    coord_y: Coordenada Y del árbol
+    coord_z: Coordenada Z del árbol (altura sobre el nivel del mar, m)
+
+    # Basic variables measured
+    dbh_1: Diámetro normal, medida 1 (cm)  # diameter mesasurement 1 (cm)
+    dbh_2: Diámetro normal, medida 2 (cm)  # diameter mesasurement 2 (cm)
+    dbh: Diámetro medido a la altura del pecho (diámetro normal) (cm)  # diameter at breast height (cm)
+    dbh_i: Incremento en diámetro a la altura del pecho debido al crecimiento (cm)  # diameter at breast height (cm)
+    stump_h: Altura del tocón (m)  # (m)
+    height: Altura del árbol (m)  # total height (m)
+    height_i: Incremento en la altura del árbol debido al crecimiento (m)  # total height (m)
+    bark_1: Espesor de corteza, medida 1 (cm)  # bark thickness mesasurement 1 (mm)
+    bark_2: Espesor de corteza, medida 2 (cm)  # bark thickness mesasurement 2 (mm)
+    bark: Espesor de corteza medio (cm)  # mean bark thickness (mm)
+    expan: Factor de expansión  # expansion factor
+
+    # Basic variables calculated
+    normal_circumference: Circunferencia normal (cm)  # circumference at breast height (cm)
+    slenderness: Esbeltez - relación altura/diámetro  # (%)
+    basal_area: Área basimétrica (cm2)  #  (cm2)
+    basal_area_i: Incremento en área basimétrica debido al crecemiento (cm2)  # increment in basal area (cm2)
+    bal: Área basimétrica de los árboles más gruesos que el árbol sujeto (m2/ha)  # (m2/ha)
+    ba_ha: Área basimétrica por ha (m2/ha)  # (m2/ha)
+
+    # Crown variables
+    cr: Índice de copa viva (%)  # (%)
+    lcw: Máximo ancho de copa (m)  #  largest crown width (m)
+    hcb: Altura de la base de la copa (m)  # height crown base (m)
+    hlcw: Altura del máximo ancho de copa (m)  # height of largest crown width (m)
+    cpa: Área de proyección de copa (m2)  # crown projection area (m2)
+    crown_vol: Volumen de copa (m3)  # crown volume (m3)
+
+    # Volume variables
+    vol: Volumen de madera con corteza (dm3)  # volume with bark (dm3)
+    bole_vol: Volumen de madera sin corteza (dm3)  # volume without bark (dm3)
+    bark_vol: Volumen de corteza (dm3)  # volume of bark (dm3)
+    firewood_vol: Volumen de leñas (dm3)  # (dm3)
+    vol_ha: Volumen de madera con corteza por ha (m3/ha)  # volume with bark per hectare (m3/ha)
+
+    # Biomass variables
+    wsw: Biomasa del tronco sin corteza (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wsw = stem wood (kg)
+    wsb: Biomasa de la corteza del tronco (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wsb = stem bark (kg)
+    wswb: Biomasa del tronco con corteza (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wswb = stem wood and stem bark (kg)
+    w_cork: Biomasa de corcho fresco (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # w_cork = fresh cork biomass (kg)
+    wthickb: Biomasa de ramas con diámetro > 7 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wthickb = Thick branches > 7 cm (kg)
+    wstb: Biomasa del tronco y ramas con diámetro > 7 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wstb = wsw + wthickb, stem + branches >7 cm (kg)
+    wb2_7: Biomasa de ramas con diámetro entre 2 y 7 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wb2_7 = branches (2-7 cm) (kg)
+    wb2_t: Biomasa de ramas con diámetro > 2 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wb2_t = wb2_7 + wthickb; branches >2 cm (kg)
+    wthinb: Biomasa de ramas con diámetro entre 0.5 y 2 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wthinb = Thin branches (2-0.5 cm) (kg)
+    wb05: Biomasa de ramas con diámetro < 0.5 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wb05 = thinniest branches (<0.5 cm) (kg)
+    wb05_7: Biomasa de ramas entre 0.5 y 7 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wb05_7 = branches between 0.5-7 cm (kg)
+    wb0_2: Biomasa de ramas menores a 2 cm en punta delgada (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wb0_2 = branches < 2 cm (kg)
+    wdb: Biomasa de ramas muertas (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wdb = dead branches biomass (kg)
+    wl: Biomasa de hojas (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wl = leaves (kg)
+    wtbl: Biomasa de ramas con diámetro < 2 cm en punta delgada y hojas (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wtbl = wthinb + wl; branches <2 cm and leaves (kg)
+    wbl0_7: Biomasa de ramas con diámetro < 7 cm en punta delgada y hojas (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wbl0_7 = wb2_7 + wthinb + wl; branches <7 cm and leaves (kg)
+    ws: Biomasa de todo el tronco con corteza (t/ha). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # ws = stem with bark (kg)
+    wb: Biomasa de todas las ramas y hojas (t/ha). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wb = branches and leaves (kg)
+    wr: Biomasa de las raíces (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wr = roots (kg)
+    wt: Biomasa total del árbol, calculada como la suma de la biomasa de todas sus partes (kg). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # wt = biomasa total (kg)
+
+    # Wood uses variables
+    unwinding: Volumen de madera útil para desenrollo (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # unwinding = useful volume for unwinding destiny (dm3)
+    veneer: Volumen de madera útil para chapa (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  #v eneer = useful volume for veneer destiny (dm3)
+    saw_big: Volumen de madera útil para sierra gruesa (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # saw_big = useful volume for big saw destiny (dm3)
+    saw_small: Volumen de madera útil para sierra (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # saw_small = useful volume for small saw destiny (dm3)
+    saw_canter: Volumen de madera útil para sierra cánter (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # saw_canter = useful volume for canter saw destiny (dm3)
+    post: Volumen de madera útil para postes (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # post = useful volume for post destiny (dm3)
+    stake: Volumen de madera útil para estacas (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # stake = useful volume for stake destiny (dm3)
+    chips: Volumen de madera útil para trituración (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).  # chips = useful volume for chips destiny (dm3)
+
+    # Competition information
+    hegyi: Índice de competencia de Hegyi, utilizando como radio límite el recibido por la variable de parcela HEGYI_RADIUS (0.25*altura por defecto)  # Hegyi competition index calculation
+
+    # Quercus suber special variables
+    dbh_oc: Diámetro normal medido sobre el corcho (Quercus suber, cm)  # dbh over cork (cm) - Quercus suber
+    h_debark: Altura hasta la que se realiza el descorche (Quercus suber, m)  # uncork height on main stem (m) - Quercus suber
+    nb: Nº de ramas descortezadas (Quercus suber)  # number of main bough stripped - Quercus suber
+    cork_cycle: Momento en el que se obtiene la información del árbol acerca del corcho (Quercus suber; 0 antes del descorche, 1 después)  # moment to obtain cork data; 0 to the moment just immediately before the stripping process,
+    count_debark: Contador de operaciones de descorche hechas sobre eĺ árbol
+    total_w_debark: Acumulador de la cantidad de biomasa (kg) extraída del árbol con labores de descorche
+    total_v_debark: Acumulador del volumen de corteza (dm3) extraída del árbol con labores de descorche
+# or 1 to the moment after the stripping process or at an intermediate age of the cork cycle production - Quercus suber
+    # uncork_type: tipo de descorche  # s = only stem; pb = principal branches; sb = secondary branches - Quercus suber
+
+    # Pinus pinea special variables
+    all_cones: Valor promedio de la producción anual de piñas por árbol  # number of all the cones of the tree (anual mean)
+    sound_cones: Valor promedio de la producción anual de piñas sanas por árbol  # number of healthy cones in a tree  (anual mean)
+    sound_seeds: Valor promedio de la producción anual de semillas sanas por árbol  # total sound seeds of the tree (anual mean)
+    w_sound_cones: Valor promedio de la biomasa anual producida de piñas sanas por árbol (kg)  # weight of sound (healthy) cones (kg) (anual mean)
+    w_all_cones: Valor promedio de la biomasa anual producida de piñas por árbol (kg)  # weight of all (healthy and not) cones (kg) (anual mean)
+
+    # mixed models
+    bal_intrasp: Bal intraspecifico (m2/ha) para modelos mixtos
+    bal_intersp: Bal intraspecifico (m2/ha) para modelos mixtos
+    basal_area_intrasp: Área basimétrica intraspecifica (m2/ha) para modelos mixtos
+    basal_area_intersp: Área basimétrica interspecifica (m2/ha) para modelos mixtos
+
+    # Basic variables on hegyi subplot
+    bal_intrasp_hegyi: Bal intraspecifico (m2/ha) dentro de la subparcela de hegyi de cada árbol
+    bal_intersp_hegyi: Bal interspecifico (m2/ha) dentro de la subparcela de hegyi de cada árbol
+    bal_ratio_intrasp_hegyi: Porcentaje de bal intraspecifico (0 a 1) dentro de la subparcela de hegyi de cada árbol
+    bal_ratio_intersp_hegyi: Porcentaje de bal interspecifico (0 a 1) dentro de la subparcela de hegyi de cada árbol
+    bal_total_hegyi: Bal total (m2/ha) dentro de la subparcela de hegyi de cada árbol
+    g_intrasp_hegyi: Área basimétrica intraspecifica (m2/ha) dentro de la subparcela de hegyi de cada árbol
+    g_intersp_hegyi: Área basimétrica interspecifica (m2/ha) dentro de la subparcela de hegyi de cada árbol
+    g_ratio_intrasp_hegyi: Porcentaje de área basimétrica intraspecifica (0 a 1) dentro de la subparcela de hegyi de cada árbol
+    g_ratio_intersp_hegyi: Porcentaje de área basimétrica intraspecifica (0 a 1) dentro de la subparcela de hegyi de cada árbol
+    g_total_hegyi: Área basimétrica total (m2/ha) dentro de la subparcela de hegyi de cada árbol
+    n_intrasp_hegyi: Densidad intraspecifica (trees/ha) dentro de la subparcela de hegyi de cada árbol
+    n_intersp_hegyi: Densidad interspecifica (trees/ha) dentro de la subparcela de hegyi de cada árbol
+    n_ratio_intrasp_hegyi: Porcentaje de densidad intraspecifica (0 a 1) dentro de la subparcela de hegyi de cada árbol
+    n_ratio_intersp_hegyi: Porcentaje de densidad interspecifica (0 a 1) dentro de la subparcela de hegyi de cada árbol
+    n_total_hegyi: Densidad total (trees/ha) dentro de la subparcela de hegyi de cada árbol
+
+    # Vorest variables
+    w_voronoi: Pesos utilizados para la construcción de los diagramas de Voronoi  # weights used to construct the Voronoi diagrams 
+    neighbours_mean_dbh: Diámetro normal promedio de los árboles vecinos (cm)
+    ogs: Espacio de crecimiento ocupado por el árbol i en el año j, computado como el área del peso de la región Voronoi para el árbol i restringido por el rango de su zona de influencia (radio) en el momento t  # occupied growing space of tree i in year t, computed as the area of the weighted Voronoi region of the tree i restricted by the range of its zone of influence (radius) at time t
+    ags: Área del sujeto no ocupada por sus árboles vecinos y por lo tanto disponible para la búsqueda de luz de dicho árbol  # area in its surroundings not occupied by neighboring trees and therefore available to that tree to search for light
+    pgs: Espacio de crecimiento potencial para el árbol i en el año t estimado como la proyección del área de la copa en un crecimiento abierto del árbol para el mismo dbh  # potential growing space of tree i in year t estimated as the crown projection area of an open grown tree of the same dbh
+    rel_area: Ratio entre el espacio de crecimiento ocupado (OGS) y el crecimiento potencial (PGS) del árbol, que será utilizado como sujeto para la capacidad de crecimiento del árbol  # ratio of the occupied growing space (OGS) of a tree and its potential growing space (PGS) and it is used as a surrogate for the growing capacity of a tree
+
+    # Auxiliar variables for future models - 08/03/2023
+    tree_var1: x
+    tree_var2: x
+    tree_var3: x
+    tree_var4: x
+    tree_var5: x
+    tree_var6: x
+    tree_var7: x
+    tree_var8: x
+    tree_var9: x
+    tree_var10: x
+    tree_var11: x
+    tree_var12: x
+    tree_var13: x
+    tree_var14: x
+    tree_var15: x
+    tree_var16: x
+    tree_var17: x
+    tree_var18: x
+    tree_var19: x
+    tree_var20: x
+    tree_var21: x
+    tree_var22: x
+    tree_var23: x
+    tree_var24: x
+    tree_var25: x
+    tree_var26: x
+    tree_var27: x
+    tree_var28: x
+    tree_var29: x
+    tree_var30: x
+    tree_var31: x
+    tree_var32: x
+    tree_var33: x
+    tree_var34: x
+    tree_var35: x
+    tree_var36: x
+    tree_var37: x
+    tree_var38: x
+    tree_var39: x
+    tree_var40: x
+    tree_var41: x
+    tree_var42: x
+    tree_var43: x
+    tree_var44: x
+    tree_var45: x
+    tree_var46: x
+    tree_var47: x
+    tree_var48: x
+    carbon_heartwood: Contenido de carbono del duramen del árbol (kg)
+    carbon_sapwood: Contenido de carbono de la albura del árbol (kg)
+    carbon_bark: Contenido de carbono de la corteza del árbol (kg)
+    carbon_stem: Contenido de carbono fijado en el tronco del árbol (kg)
+    carbon_branches: Contenido de carbono fijado en las ramas del árbol (kg)
+    carbon_roots: Contenido de carbono fijado en las raíces del árbol (kg)
+    carbon: Contenido total de carbono fijado en el árbol (kg)
+    saw_big_liferebollo: Volumen de madera útil para sierra gruesa bajo las condiciones especificadas en el proyecto LIFE-Rebollo (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).
+    saw_small_liferebollo: Volumen de madera útil para sierra bajo las condiciones especificadas en el proyecto LIFE-Rebollo (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).
+    staves_intona: Volumen de madera útil para duelas de la empresa INTONA bajo las condiciones especificadas en el proyecto LIFE-Rebollo (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).
+    bottom_staves_intona: Volumen de madera útil para duelas del fondo del barril de la empresa INTONA bajo las condiciones especificadas en el proyecto LIFE-Rebollo (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).
+    wood_panels_gamiz: Volumen de madera útil para madera laminada de la empresa GAMIZ bajo las condiciones especificadas en el proyecto LIFE-Rebollo (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).
+    mix_garcia_varona: Volumen de madera útil para varios destinos de la empresa GARCÍA VARONA bajo las condiciones especificadas en el proyecto LIFE-Rebollo (dm3). Valor correspondiente a un árbol individual (sin tener cuenta su expan).
+
+    # Status
+    status: Estado del árbol (M = muerto; C = cortado; I = incorporado)  # status of the tree, M-> die, C-> harvested, I-> ingrowth
+
+    # Model type status
+    under_development: en desarrollo
+    tree_independent: modelo de árbol individual independiente de la distancia
+    tree_dependent: modelo de árbol individual dependiente de la distancia
+    stand_model: modelo de masa
+    size-class models: modelo de clases de tamaño

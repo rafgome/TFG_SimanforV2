@@ -1,0 +1,13 @@
+{
+  "user": "",
+  "name": "Experimentos DRP",
+  "overwrite_output_file": true,
+  "output_path": "../tests/outputs/QilexQsuber_mix__es__v01__",
+  "decimal_numbers": 2,
+  "zip_compression": false,
+  "operations": [
+    {"name": "Carga", "description": "Carga de datos", "model_path": "models.load.xlsx_load", "model_class": "XLSXLoad", "operation": "LOAD", "variables": {"init": 25, "time": 0, "input": "../tests/inputs/template_diego_5.xlsx"}},
+    {"name": "Inicio", "description": "Inicialización de datos", "model_path": "models.trees.QilexQsuber_mix__es__v01", "model_class": "QilexQsuberMix", "operation": "INIT", "variables": { "time": 0}},
+    {"name": "Simulacion", "description": "simulación", "model_path": "models.trees.QilexQsuber_mix__es__v01", "model_class": "QilexQsuberMix", "operation": "EXECUTION", "variables": { "time": 5}}
+  ]
+}

@@ -1,0 +1,95 @@
+version: '3.4'
+
+networks:
+  simanfor:
+    external: false
+
+services:
+
+  proxy-inverse:
+    container_name: proxy
+    image: simanfor-dask/production:latest
+    build: 
+      context: .
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - simanfor
+    depends_on:
+      - web-frontend
+
+  web-frontend:
+    container_name: frontend
+    image: simanfor-dask/web-frontend:latest
+    build:
+      context: ../web-frontend
+    restart: always
+    depends_on:
+      - web-backend
+    networks:
+      - simanfor
+
+  web-backend:
+    container_name: backend
+    image: simanfor-dask/web-backend:latest
+    build:
+      context: ../web-backend
+    restart: always
+    ports:
+      - 3000:3000
+    #Check which port uses Node docker container
+    environment:
+      SSH_HOST: 157.88.224.203
+      SSH_PORT: 22
+      SSH_USERNAME: simanfor
+      SSH_PASSWORD: 5%9a4C6&
+      SCRATCH_PATH: /scratch/simanfor
+      INPUT_SCRATCH_PATH: /input
+      OUTPUT_SCRATCH_PATH: /output
+      MONGO_HOST: mongodb://sngular_aia_1_3:P1l1nh004.@mongo:27017/
+      MONGO_DB: simanfor
+      JWT_MASTER_TOKEN: simanforsngular
+      # PRODUCTION: 1
+    volumes:
+      - /home/rafagc/simanfor-rgc/persist/data_input:/usr/src/app/input
+      - /home/rafagc/simanfor-rgc/persist/data_output:/usr/src/app/output
+    depends_on:
+      - mongo
+    networks:
+      - simanfor
+
+  mongo:
+    container_name: mongo
+    image: mongo:4.2.8-bionic
+    restart: always
+    ports:
+      # - 8081:8081
+      - 27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: sngular_aia_1_3
+      MONGO_INITDB_ROOT_PASSWORD: P1l1nh004.
+      MONGO_INITDB_DATABASE: simanfor
+    volumes:
+      - /home/rafagc/simanfor-rgc/persist/mongodb:/data/db
+    networks:
+      - simanfor
+
+  rstudio:
+    container_name: simforstudio
+    image: rocker/verse
+    build: 
+      context: ./rstudio
+    restart: always
+    ports:
+      - 8787:8787
+    environment:
+      - PASSWORD=rmv2mil24.
+      - ROOT=true
+      - DISABLE_AUTH=true
+    volumes:
+      - /home/rafagc/simanfor-rgc/persist/rstudio:/home/rstudio
+      - /home/rafagc/simanfor-rgc/persist/data_output:/home/rstudio/data
+    networks:
+      - simanfor

@@ -1,0 +1,21 @@
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.action-button {
+  margin-right: 5px;
+  line-height: 30px;
+  font-size: x-small;
+}
+
+.no-data {
+  margin-top: 3em;
+}
+
+.loading-gif {
+  display: block;
+  margin: 0 auto;
+  max-width: 50px;
+}

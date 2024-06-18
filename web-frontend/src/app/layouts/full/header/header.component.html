@@ -1,0 +1,27 @@
+<!-- <button [matMenuTriggerFor]="language" mat-icon-button class="m-r-5"> Idioma </button>
+<mat-menu #language="matMenu" class="mymegamenu">
+  <button mat-menu-item *ngFor="let language of translate.getLangs()" (click)="switchLang(language)">
+    {{ language }}
+  </button>
+</mat-menu> -->
+<div class="header-menu-container">
+  <mat-form-field class="lenguage-select">
+    <mat-select [value]=translate.currentLang (selectionChange)="switchLang($event)">
+      <mat-option *ngFor="let language of translate.getLangs()" [value]=language>{{ language }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button mat-button class="login-button" color="primary" *ngIf="!authService.isAuthenticated()" title="{{ 'menu.login' | translate }}" [routerLink]="['/login']">
+    {{ 'login.title' | translate }}
+  </button>
+  <button mat-icon-button (click)="closeSession()" class="logout-button" *ngIf="authService.isAuthenticated()" title="{{ 'menu.closesession' | translate }}">
+    <img src="assets/images/logout-icon.png" alt="Logout">
+  </button>
+</div>
+
+<div class="text-center spinner-wrapper" *ngIf="loaderState">
+  <div class="spinner-container">
+    <p class="spinner-text" *ngIf="loadetText !== ''" [innerHTML]="loadetText"></p>
+    <mat-spinner></mat-spinner>
+  </div>
+</div>

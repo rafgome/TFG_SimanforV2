@@ -1,0 +1,17 @@
+::ng-deep .mat-figure {
+  display: block !important; /* or whichever you need */
+}
+
+mat-grid-list, mat-grid-tile {
+  min-height: 220px;
+}
+
+.close-button {
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.right-align {
+  float: right;
+}

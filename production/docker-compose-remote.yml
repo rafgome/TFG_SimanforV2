@@ -1,0 +1,70 @@
+version: '3.4'
+
+networks:
+  simanfor:
+    external: true
+
+services:
+
+  proxy-inverse:
+    container_name: proxy
+    image: ghcr.io/simanfor-dask/production/production:1.0.11
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - simanfor
+    depends_on:
+      - web-frontend
+
+  web-frontend:
+    container_name: frontend
+    image: ghcr.io/simanfor-dask/web-frontend/web-frontend:2.0.13
+    restart: always
+    depends_on:
+      - web-backend
+    networks:
+      - simanfor
+
+  web-backend:
+    container_name: backend
+    image: ghcr.io/simanfor-dask/web-backend/web-backend:2.0.11
+    restart: always
+    ports:
+      - "3000:3000"
+    #Check which port uses Node docker container
+    environment:
+      SSH_HOST: 157.88.224.203
+      SSH_PORT: 22
+      SSH_USERNAME: simanfor
+      SSH_PASSWORD: 5%9a4C6&
+      SCRATCH_PATH: /scratch/simanfor
+      INPUT_SCRATCH_PATH: /input
+      OUTPUT_SCRATCH_PATH: /output
+      MONGO_HOST: mongodb://sngular_aia_1_3:P1l1nh004.@mongo
+      MONGO_DB: simanfor
+      JWT_MASTER_TOKEN: simanforsngular
+      PRODUCTION: 1
+      SERVER_PATH: /api
+    volumes:
+      - /root/data_output:/usr/src/app/output
+      - /root/data_input:/usr/src/app/input
+    depends_on:
+      - mongo
+    networks:
+      - simanfor
+
+  mongo:
+    container_name: mongo
+    image: mongo:4.2.8-bionic
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: sngular_aia_1_3
+      MONGO_INITDB_ROOT_PASSWORD: P1l1nh004.
+      MONGO_INITDB_DATABASE: simanfor
+    volumes:
+      - /root/data_mongo:/data/db
+    networks:
+      - simanfor
+

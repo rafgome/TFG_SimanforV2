@@ -1,0 +1,17 @@
+<div class="page-content">
+    <br/>
+    <button mat-button color="warn" class="new-scenario-button" (click)="openAddScenarioDialog()" tabindex="-1">{{ 'scenarios.new_title' | translate }}</button>
+    <app-sim-table [tableHeader]=header
+                   [tableBody]=scenarios
+                   [tableTitle]="'scenarios'"
+                   [rowButtons]="['results', 'details', 'delete']"
+                   (detailsEvent)="edit($event)"
+                   (deleteEvent)="delete($event)"
+                   (resultsEvent)="results($event)"
+    ></app-sim-table>
+    
+    <div id="wrapadtest" #wrapadtest>
+        <div class="adBanner">
+        </div>
+    </div>
+</div>

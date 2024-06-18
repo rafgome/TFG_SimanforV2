@@ -1,0 +1,9 @@
+<app-sim-table [tableHeader]=header
+               [tableBody]=inventories
+               [tableTitle]="'inventories'"
+               [rowButtons]="['edit', 'delete']"
+               [addForm]="addForm"
+               (addEvent)="add($event)"
+               (editEvent)="edit($event)"
+               (deleteEvent)="delete($event)"
+></app-sim-table>

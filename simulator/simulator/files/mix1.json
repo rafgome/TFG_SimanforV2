@@ -1,0 +1,38 @@
+{
+  "user": "Aitor",
+  "name": "Experimento Claras",
+  "overwrite_output_file": true,
+  "output_path": "../../output/mix1___",
+  "decimal_numbers": 2,
+  "zip_compression": false,
+  "operations": [
+    {
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.xlsx_load",
+      "model_class": "XLSXLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 0,
+        "time": 0,
+        "input": "../../data/mix1.xlsx"
+      }
+    },
+    {"name": "Inicio", "description": "Inicialización de datos", "model_path": "models.trees.mixed_models_Spain", "model_class": "MixedModelsSpain", "operation": "INIT", "variables": { "time": 0}},
+    {"name": "Simulacion", "description": "Inicialización de datos", "model_path": "models.trees.mixed_models_Spain", "model_class": "MixedModelsSpain", "operation": "EXECUTION", "variables": { "time": 5}},
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_systematic",
+      "model_class": "CutDownSystematics",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 50,
+        "species": 25,
+        "volume_target": "plot"
+      }
+    }
+  ]
+}

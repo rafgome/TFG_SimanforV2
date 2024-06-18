@@ -1,0 +1,900 @@
+openapi: 3.0.0
+info:
+  title: Simanfor
+  version: '2.0.2'
+servers:
+  - url: 'http://35.246.161.83/simanfor/'
+    description: Dev
+  - url: 'http://localhost:3000/'
+    description: Local
+paths:
+  /login:
+    post:
+      summary: 'Log in Simanfor'
+      operationId: post-login
+      parameters: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                password:
+                  type: string
+            examples: {}
+        description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 400
+                  string_code:
+                    type: string
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 401
+                  string_code:
+                    type: string
+      description: Generates a session token for an user.
+      security: []
+  /register:
+    post:
+      summary: 'Sign up in Simanfor'
+      operationId: post-register
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: string
+                      role:
+                        type: string
+                      _id:
+                        type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 400
+                  string_code:
+                    type: string
+        '403':
+          description: Invalid role
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 403
+                  string_code:
+                    type: string
+        '409':
+          description: User already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 409
+                  string_code:
+                    type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+      description: |-
+        Creates a new Simanfor user.
+        ROLE: admin
+  /me:
+    get:
+      summary: 'Get your user profile'
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      user:
+                        type: string
+                      role:
+                        type: string
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string
+      operationId: get-me
+      description: Returns user profile data.
+  /me/changepassword:
+    post:
+      summary: 'Change personal password'
+      operationId: post-me-changepassword
+      responses:
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 400
+                  string_code:
+                    type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                oldPassword:
+                  type: string
+                newPassword:
+                  type: string
+        description: ''
+      parameters: []
+      description: Changes user password.
+  /user:
+    get:
+      summary: 'Get user list'
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                        user:
+                          type: string
+                        role:
+                          type: string
+        '403':
+          description: Invalid role
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 403
+                  string_code:
+                    type: string
+      operationId: get-user
+      description: |-
+        Returns users list.
+        ROLE: admin
+  '/user/{userId}':
+    parameters:
+      - schema:
+          type: string
+        name: userId
+        in: path
+        required: true
+    delete:
+      summary: 'Delete an simanfor user'
+      operationId: delete-user-userId
+      responses:
+        '204':
+          description: No content
+        '403':
+          description: Invalid role
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 403
+                  string_code:
+                    type: string
+      description: |-
+        Removes an user.
+        ROLE: admin
+  /inventory:
+    get:
+      summary: Get inventory list
+      parameters:
+        - in: query
+          name: smartelo
+          schema:
+            type: boolean
+          required: false
+          description: Filter inventories with smartelo format
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Inventory'
+      operationId: get-inventory
+      description: |-
+        Gets inventory list.
+        Support CSV and XLSX.
+    post:
+      summary: 'Add a new inventory'
+      operationId: post-inventory
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Inventory'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 400
+                  string_code:
+                    type: string
+        '409':
+          description: Inventory already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 409
+                  string_code:
+                    type: string
+      description: Adds a new inventory.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                year:
+                  type: string
+                type:
+                  type: string
+                public:
+                  type: boolean
+                smartelo:
+                  type: boolean
+                xlsx:
+                  $ref: '#/components/schemas/XSLXFile'
+                csvPlot:
+                  $ref: '#/components/schemas/CSVFile'
+                csvTree:
+                  $ref: '#/components/schemas/CSVFile'
+              required:
+                [name, year, type, public, smartelo]
+      parameters: []
+  '/inventory/{inventoryId}':
+    parameters:
+      - schema:
+          type: string
+        name: inventoryId
+        in: path
+        required: true
+    get:
+      summary: Get an inventory
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Inventory'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string                    
+      operationId: get-inventory-inventoryId
+      description: Gets an inventory.
+    delete:
+      summary: 'Delete an inventory'
+      operationId: delete-inventory-inventoryId
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string           
+      description: Removes an inventory.
+  /actions:
+    get:
+      summary: Get action list
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Actions'
+      operationId: get-actions
+      description: |-
+        Gets actions list.
+    post:
+      summary: 'Add actions'
+      operationId: post-actions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Actions'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 400
+                  string_code:
+                    type: string
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string
+      description: Adds a new actions item.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                inventory:
+                  type: string
+                actions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Actions'
+      parameters: []
+  '/actions/{actionsId}':
+    parameters:
+      - schema:
+          type: string
+        name: actionsId
+        in: path
+        required: true
+    get:
+      summary: 'Get an action item'
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Actions'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string  
+      operationId: get-actions-actionsId
+      description: Gets an actions item.
+    delete:
+      summary: 'Delete an action item'
+      operationId: delete-actions-actionsId
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string     
+      description: Removes an actions item.
+  '/actions/{actionsId}/generateSmartelo':
+    parameters:
+      - schema:
+          type: string
+        name: actionsId
+        in: path
+        required: true
+    post:
+      summary: 'Generate smartelo file'
+      tags: []
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string  
+      operationId: get-actions-actionsId-smartelo
+      description: Generate Smartelo file in XLSM format.
+  /model:
+    get:
+      summary: 'Get model list' 
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Model'
+      operationId: get-model
+      description: Creates a new model.
+    post:
+      summary: 'Add a model item'
+      operationId: post-model
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Model'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 400
+                  string_code:
+                    type: string
+        '403':
+          description: Invalid role
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 403
+                  string_code:
+                    type: string                  
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                modelPath:
+                  type: string
+                modelClass:
+                  type: string
+                operation:
+                  type: string
+                allowedVariables:
+                  type: string
+      description: Adds a new model.
+  '/model/{modelId}':
+    parameters:
+      - schema:
+          type: string
+        name: modelId
+        in: path
+        required: true
+    get:
+      summary: 'Get a model item'
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Model'
+        '403':
+          description: Invalid role
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 403
+                  string_code:
+                    type: string                      
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string                      
+      operationId: get-model-modelId
+      description: Gets a model.
+    delete:
+      summary: 'Delete a model item'
+      operationId: delete-model-modelId
+      responses:
+        '204':
+          description: No content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        '403':
+          description: Invalid role
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 403
+                  string_code:
+                    type: string                      
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    default: false
+                  message:
+                    type: string
+                  code:
+                    default: 404
+                  string_code:
+                    type: string                     
+      description: Removes a model.
+components:
+  schemas:
+    XSLXFile:
+      title: XLSXFile
+      type: object
+      description: XLSX File
+    CSVFile:
+      title: CSVFile
+      type: object
+      description: CSV File
+    Model:
+      title: Model
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        modelPath:
+          type: string
+        modelClass:
+          type: string
+        operation:
+          type: string
+        allowedVariables:
+          type: string
+        owner:
+          type: string
+      description: ''
+    Inventory:
+      title: Inventory
+      type: object
+      properties:
+        _id:
+          type: string
+        inventoryId:
+          type: string
+        name:
+          type: string
+        year:
+          type: string
+        creator:
+          type: string
+        creatorId:
+          type: string
+        creationDate:
+          type: number
+        public:
+          type: boolean
+        type:
+          type: string
+        fileUrl:
+          type: string
+    Actions:
+      title: Actions
+      type: object
+      properties:
+        _id:
+          type: string
+        creator:
+          type: object
+        creatorId:
+          type: string
+        creationDate:
+          type: number
+        inventoryId:
+          type: string
+        inventoryName:
+          type: string
+        fileURL:
+          type: string
+        type:
+          type: string
+  securitySchemes:
+    Authorization:
+      name: Authorization
+      type: apiKey
+      in: header
+security:
+  - Authorization: []

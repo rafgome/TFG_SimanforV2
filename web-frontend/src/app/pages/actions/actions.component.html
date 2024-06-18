@@ -1,0 +1,47 @@
+<!-- <button mat-button color="warn" class="new-action-button" (click)="openAddActionsDialog()" tabindex="-1">{{ 'inventory_actions.new_title' | translate }}</button> -->
+<mat-card *ngIf="bannerVisible" class="banner">
+    <mat-card-header>
+        <mat-icon mat-card-avatar class="iconBanner">difference</mat-icon>
+        <mat-card-title style="font-size: small;">{{ onlyDownload ? ('inventory_actions.downloadingSmartelo' | translate) : ('inventory_actions.generatingSmartelo' | translate) }}</mat-card-title>
+        <mat-card-subtitle style="font-size: small;">{{ 'inventory_actions.patient' | translate }}</mat-card-subtitle>
+        <button mat-icon-button (click)="closeBanner1()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-card-header>
+    <mat-progress-bar mode="indeterminate" class="progressBar"></mat-progress-bar>
+</mat-card>
+<mat-card *ngIf="successfullyBanner" class="banner">
+    <mat-card-header>
+        <mat-icon mat-card-avatar class="iconBanner">check</mat-icon>
+        <mat-card-title style="font-size: small;">{{ 'inventory_actions.generatedSmartelo' | translate }}</mat-card-title>
+        <mat-card-subtitle style="font-size: small;">{{ 'inventory_actions.available' | translate }}</mat-card-subtitle>
+        <button mat-icon-button (click)="closeBanner2()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-card-header>
+</mat-card>
+<mat-card *ngIf="errorBanner" class="banner">
+    <mat-card-header>
+        <mat-icon mat-card-avatar class="errorIconBanner">error</mat-icon>
+        <mat-card-title style="font-size: small;">Error</mat-card-title>
+        <mat-card-subtitle style="font-size: small;">{{ 'error.undefined' | translate }}</mat-card-subtitle>
+        <button mat-icon-button (click)="closeBanner3()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-card-header>
+</mat-card>
+<app-sim-table [tableHeader]=header
+               [tableBody]=actions
+               [tableTitle]="'inventory_actions'"
+               [rowButtons]="['generateSmartelo', 'showActions', 'delete']"
+               [addForm]="addForm"
+               (addEvent)="addActions($event)"
+               (editEvent)="generateSmartelo($event)"
+               (detailsEvent)="details($event)"
+               (deleteEvent)="delete($event)"
+></app-sim-table>
+
+<div id="wrapadtest" #wrapadtest>
+    <div class="adBanner">
+    </div>
+</div>

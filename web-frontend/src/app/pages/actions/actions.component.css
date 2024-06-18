@@ -1,0 +1,31 @@
+.new-action-button {
+  margin-left: 15px;
+}
+
+.adBanner {
+  background-color: transparent;
+  height: 1px;
+  width: 1px;
+}
+
+.iconBanner {
+  padding: inherit;
+  color: rgba(145, 180, 80, 1);
+}
+
+.errorIconBanner {
+  padding: inherit;
+  color: #99745f;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: rgba(145, 180, 80, 1);
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: rgba(145, 180, 80, 0.2);
+}
+
+::ng-deep .mat-card-header-text {
+  width: 100%;
+}

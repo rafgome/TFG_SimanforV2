@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+input/scenario/*
+input/inventory/*
+input/actions/*
+output/*
+!input/actions/empty_dir
+!input/scenario/empty_dir
+!input/inventory/empty_dir
+!output/empty_dir
+!output/actions/empty_dir
+.idea

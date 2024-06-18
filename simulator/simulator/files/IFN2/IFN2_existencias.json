@@ -1,0 +1,34 @@
+{
+  "user": "Aitor Vázquez Veloso",
+  "name": "Existencias IFN2",
+  "overwrite_output_file": "YES",
+  "output_path": "../../output/IFN2/IFN2_existencias__",
+  "decimal_numbers": 2,
+  "zip_compression": "NO",
+  "operations": [
+    {
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.csv_load",
+      "model_class": "CSVLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 0,
+        "time": 0,
+        "input": {
+          "plots": "../../data/IFN2/IFN2_plots_filtered.csv",
+          "trees": "../../data/IFN2/IFN2_trees_filtered.csv"
+        }
+      }
+    },
+     {"name": "Inicio",
+      "description": "Inicialización de datos",
+      "model_path": "models.trees.existencias_v01",
+      "model_class": "Existencias",
+      "operation": "INIT",
+      "variables": {
+        "time": 0
+      }
+    }
+  ]
+}

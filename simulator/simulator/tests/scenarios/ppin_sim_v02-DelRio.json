@@ -1,0 +1,186 @@
+{
+  "user": "",
+  "name": "Experimento Claras",
+  "overwrite_output_file": "YES",
+   "output_path": "../tests/outputs/Ppin_SIM_v02_DelRio_tree__",
+  "decimal_numbers": 2,
+  "zip_compression": "NO",
+  "operations": {
+    "operation_0":{
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.xlsx_load",
+      "model_class": "XLSXLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 25,
+        "time": 0,
+        "input": "../../data/Manual_MDelRio/Ppinaster_CyL-datos_ejemplo.xlsx"
+      }
+    },
+    "operation_1":{
+      "name": "Inicio",
+      "description": "Inicialización de datos",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "INIT",
+      "variables": {
+        "time": 0
+      }
+    },
+    "operation_2":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "PERCENTOFTREES",
+        "volumen": 10
+      }
+    },
+    "operation_3":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    "operation_4":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "VOLUME",
+        "volumen": 10
+      }
+    },
+    "operation_5":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    "operation_6":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 10
+      }
+    },
+    "operation_7":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    "operation_8":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "PERCENTOFTREES",
+        "volumen": 10
+      }
+    },
+    "operation_9":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    "operation_10":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "VOLUME",
+        "volumen": 10
+      }
+    },
+    "operation_11":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    "operation_12":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 10
+      }
+    },
+    "operation_13":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_systematic",
+      "model_class": "CutDownSystematics",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 10
+      }
+    },
+    "operation_14":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    "operation_15":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v02",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+<button class="close-button" mat-button (click)="onNoClick()">X</button>
+<h1 mat-dialog-title *ngIf="editId === undefined">{{ dataModelName + '.new' | translate }}</h1>
+<h1 mat-dialog-title *ngIf="editId !== undefined">{{ dataModelName + '.edit' | translate }}</h1>
+<div mat-dialog-content>
+  <div *ngFor="let field of dataModel">
+    <mat-form-field *ngIf="field.type == 'string'">
+      <mat-label>{{ dataModelName + '.' + field.name | translate }}</mat-label>
+      <input name="field.name" matInput tabindex="1" [(ngModel)]="data[field.name]" *ngIf="field.required" required (ngModelChange)="updateValidInput()">
+      <input name="field.name" matInput tabindex="1" [(ngModel)]="data[field.name]" *ngIf="!field.required">
+      <mat-error *ngIf="field.required">
+        {{ 'error.required_params' | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="field.type == 'password'" class="password-field">
+      <mat-label>{{ dataModelName + '.' + field.name | translate }}</mat-label>
+      <div class="password-input-container">
+        <input name="field.name" matInput tabindex="1" [(ngModel)]="data[field.name]" [type]="passwordFieldType" *ngIf="field.required" required (ngModelChange)="updateValidPassword(); updateValidInput()">
+        <button mat-icon-button tabindex="-1" (click)="togglePasswordVisibility()" [attr.aria-label]="passwordFieldType === 'password' ? 'Show password' : 'Hide password'" class="password-toggle-button">
+          <img src="assets/images/view-password.png" alt="Toggle password visibility">
+        </button>
+      </div>
+      <mat-error *ngIf="field.required">
+        {{ 'error.required_params' | translate }}
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field *ngIf="field.type == 'confirmPassword'" class="password-field">
+      <mat-label>{{ dataModelName + '.' + field.name | translate }}</mat-label>
+      <div class="password-input-container">
+        <input name="field.name" matInput tabindex="1" [(ngModel)]="confirmPassword" [type]="confirmPasswordFieldType" (ngModelChange)="updateValidPassword(); updateValidInput()">
+        <button mat-icon-button tabindex="-1" (click)="toggleConfirmPasswordVisibility()" [attr.aria-label]="confirmPasswordFieldType === 'password' ? 'Show password' : 'Hide password'" class="password-toggle-button">
+          <img src="assets/images/view-password.png" alt="Toggle password visibility">
+        </button>
+      </div>
+    </mat-form-field>
+
+    <div *ngIf="editId !== undefined && field.type === 'show'" style="margin-bottom: 10px;">
+      <label style="display: block; font-size: 0.8em;">{{ dataModelName + '.' + field.name | translate }}</label>
+      <div style="border-bottom: 1px solid rgb(133, 133, 133); padding-bottom: 5px;">
+        <span>{{ data[field.name] }}</span>
+      </div>
+    </div>
+
+    <mat-form-field *ngIf="field.type == 'number'">
+      <mat-label>{{ dataModelName + '.' + field.name | translate }}</mat-label>
+      <input type="number" name="field.name" matInput tabindex="1" [(ngModel)]="data[field.name]" *ngIf="field.required" required (ngModelChange)="updateValidInput()">
+      <input type="number" name="field.name" matInput tabindex="1" [(ngModel)]="data[field.name]" *ngIf="!field.required">
+      <mat-error *ngIf="field.required">
+        {{ 'error.required_params' | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="field.type == 'select' && (editId === undefined || field.editable)">
+      <mat-label>{{ dataModelName + '.' + field.name | translate }}</mat-label>
+      <mat-select name="field.name" [(ngModel)]="data[field.name]" [(value)]="selected" (selectionChange)="resetFileInput()" required>
+        <mat-option *ngFor="let value of field.values" [value]="value">
+          {{'select.' + value | translate}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div name="field.name" *ngIf="field.type == 'file' && editId === undefined && selected === 'xlsx'" class="file">
+      <input #csvInput hidden="true" type="file" onclick="this.value=null"
+             (change)="fileInputChange($event, 'xlsx')" accept="{{ '.xlsx' }}" required/>
+      <button mat-flat-button color="primary"
+              (click)="csvInput.click()">{{ !data['xlsx'] ? ("actions.select_input" | translate) : data['xlsx'].name + ("actions.change_input" | translate) }}</button>
+    </div>
+ 
+    <div *ngIf="field.type == 'file' && editId === undefined && selected === 'csv'" class="file">
+      <input #csvInput1 hidden="true" type="file" onclick="this.value=null"
+             (change)="fileInputChange($event, 'csvPlot')" accept="{{ '.csv' }}" required/>
+      <button mat-flat-button color="primary"
+              (click)="csvInput1.click()">{{ !data['csvPlot'] ? ("actions.select_input_plot" | translate) : data['csvPlot'].name + ("actions.change_input" | translate) }}</button>
+      <input #csvInput2 hidden="true" type="file" onclick="this.value=null"
+             (change)="fileInputChange($event, 'csvTree')" accept="{{ '.csv' }}" required/>
+      <button mat-flat-button color="primary"
+              (click)="csvInput2.click()">{{ !data['csvTree'] ? ("actions.select_input_tree" | translate) : data['csvTree'].name + ("actions.change_input" | translate) }}</button>
+    </div>
+
+
+    <mat-checkbox name="field.name" *ngIf="field.type == 'boolean'" tabindex="5"
+                  [(ngModel)]="data[field.name]">{{ dataModelName + '.' + field.name | translate }}</mat-checkbox>
+
+
+    <div *ngIf="field.type == 'chip'" class="file">
+      <label>{{ 'inventories.smartelo' | translate}}</label>
+      <mat-radio-group color="primary" class="inventory-radio-group" [(ngModel)]="data[field.name]" (ngModelChange)="updateValidInput()">
+      <mat-radio-button class="inventory-radio-button" value=true>
+        Smartelo
+      </mat-radio-button>
+      <mat-radio-button class="inventory-radio-button" value=false>
+        Simanfor
+      </mat-radio-button>
+    </mat-radio-group>
+    </div>
+  </div>
+</div>
+<div *ngIf="!validPassword">
+  <p style="color: red;">{{ 'error.invalid_password' | translate }}</p>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <div class="center-buttons">
+    <button mat-button *ngIf="validInput" color="primary" [mat-dialog-close]="data" tabindex="8">{{ 'actions.send' | translate }}</button>
+    <button mat-button *ngIf="!validInput" disabled color="primary" [mat-dialog-close]="data" tabindex="8">{{ 'actions.send' | translate }}</button>
+    <button mat-button *ngIf="dataModelName==='users' && editId !== undefined" (click)="refuseUser()" tabindex="8" style="background-color: red; color: white;">{{ 'actions.decline' | translate }}</button>
+    <button mat-button color="warn" (click)="onNoClick()" tabindex="-1">{{ 'actions.cancel' | translate }}</button>
+  </div>
+  <button mat-button class="left-button" *ngIf="dataModelName==='users' && editId !== undefined && numActualUser > 0" color="primary" (click)="previousUser()" tabindex="8">{{ 'actions.previous' | translate }}</button>
+  <button mat-button class="right-button" *ngIf="dataModelName==='users' && editId !== undefined && numActualUser < (numRequestedUsers - 1)" color="primary" (click)="nextUser()" tabindex="8">{{ 'actions.next' | translate }}</button>
+</div>

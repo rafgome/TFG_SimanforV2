@@ -1,0 +1,73 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>{{ tableTitle + '.title' | translate }}</mat-card-title>
+    <div class="header-button-row" *ngIf="!selectable && !!addForm && tableTitle !== 'users'">
+      <button mat-button color="primary" (click)="openDialog()">{{ 'actions.upload' | translate }}</button>
+    </div>
+    <div class="header-button-row" *ngIf="!selectable && !!addForm && tableTitle === 'users'">
+      <button mat-button color="primary" (click)="openRequestedUsersDialog()">{{ 'actions.requestedUsers' | translate }}{{ numRequestedUsers }}</button>
+    </div>
+    <div class="header-button-row" *ngIf="!selectable && tableTitle === 'inventory_actions'">
+      <button mat-button color="primary" (click)="openAddActionsDialog()">{{ 'actions.upload' | translate }}</button>
+    </div>
+    <table *ngIf="tableBody" datatable [dtOptions]="dtOptions" class="row-border hover compact">
+      <thead>
+      <tr>
+        <th *ngIf="!!selectable">
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        *ngIf="!!allowMultiSelect">
+          </mat-checkbox>
+        </th>
+        <th *ngFor="let field of tableHeader">{{ tableTitle + '.' + field | translate }}</th>
+        <th *ngIf="tableTitle === 'models'">{{ tableTitle + '.docs' | translate }}</th>
+        <th *ngIf="rowButtons.length >= 1 && !selectable">{{ 'table.actions' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of tableBody">
+        <td *ngIf="!!selectable">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+        <td *ngFor="let field of generateArray(row)">
+          <div *ngIf="isBoolean(field)">
+            <mat-checkbox [ngModel]="field" disabled></mat-checkbox>
+          </div>
+          <div *ngIf="!isBoolean(field) && !!field">
+            <p title="{{field}}">{{ field | cutter }}</p>
+          </div>
+        </td>
+        <td *ngIf="tableTitle === 'models'">
+          <a [href]="row.docs">{{ tableTitle + '.linkDocs' | translate }}</a>
+        </td>
+        <td *ngIf="rowButtons.length >= 1 && !selectable">
+          <button mat-button color="primary" *ngIf="rowButtons.includes('results') && row.status == 'FINISHED'"
+                  class="action-button"
+                  (click)="results(row)">{{ 'table.results' | translate }}</button>
+          <button mat-button color="primary" *ngIf="rowButtons.includes('details')" class="action-button"
+                  (click)="details(row)">{{ 'table.details' | translate }}</button>
+          <button mat-button color="primary" *ngIf="rowButtons.includes('generateSmartelo')" class="action-button"
+                  (click)="generateSmartelo(row)">
+            {{ row.smarteloFile ?
+              ('table.downloadSmartelo' | translate) :
+              ('table.generateSmartelo' | translate) }}
+          </button>
+          <button mat-button color="primary" *ngIf="rowButtons.includes('showActions')" class="action-button"
+                  (click)="details(row)">{{ 'table.showActions' | translate }}</button>
+          <button mat-button color="primary" *ngIf="rowButtons.includes('edit')" class="action-button"
+                  (click)="edit(row)">{{ 'table.edit' | translate }}</button>
+          <button mat-button color="dang" *ngIf="rowButtons.includes('delete')" class="action-button"
+                  (click)="delete(row._id)">{{ 'table.delete' | translate }}</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <app-basic-spinner [visible]="!tableBody || loading"></app-basic-spinner>
+    <button mat-button color="primary" class="action-button" *ngIf="!!selectable"
+            (click)="select()">{{ 'table.select' | translate }}</button>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,27 @@
+.file {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.file button {
+  margin: 10px auto;
+  display: block;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.close-button {
+float: right;
+top:-24px;
+right:-24px;
+}
+
+.import-file {
+  text-align: center;
+  font-style: italic;
+  margin-top: auto;
+}
+
+.right-align {
+  float: right;
+}

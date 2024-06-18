@@ -1,0 +1,110 @@
+{
+  "user": "",
+  "name": "Experimento Claras",
+  "overwrite_output_file": "YES",
+  "output_path": "../tests/outputs/QROB_GAL_stand__",
+  "decimal_numbers": 2,
+  "zip_compression": "NO",
+  "operations": {
+    "operation_0":{
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.xlsx_load",
+      "model_class": "XLSXLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 25,
+        "time": 0,
+        "input": "../tests/inputs/data_sm4.2015.1p_eng_qrob.xlsx"
+      }
+    },
+    "operation_1":{
+      "name": "Inicio",
+      "description": "Inicialización de datos",
+      "model_path": "models.stand.Qrobur_stand__gal__v01",
+      "model_class": "QuercusRoburGaliciaStand",
+      "operation": "INIT",
+      "variables": {
+        "time": 0
+      }
+    },
+    "operation_2":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.stand.Qrobur_stand__gal__v01",
+      "model_class": "QuercusRoburGaliciaStand",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 1,
+        "min_age": 0,
+        "max_age": 100
+      }
+    },
+    "operation_3":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.stand.Qrobur_stand__gal__v01",
+      "model_class": "QuercusRoburGaliciaStand",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "PERCENTOFTREES",
+        "volumen": 10,
+        "min_age": 0,
+        "max_age": 100
+      }
+    },
+    "operation_4":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.stand.Qrobur_stand__gal__v01",
+      "model_class": "QuercusRoburGaliciaStand",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 1,
+        "min_age": 0,
+        "max_age": 100
+      }
+    },
+    "operation_5":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.stand.Qrobur_stand__gal__v01",
+      "model_class": "QuercusRoburGaliciaStand",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 30,
+        "min_age": 0,
+        "max_age": 100
+      }
+    },
+    "operation_6":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.stand.Qrobur_stand__gal__v01",
+      "model_class": "QuercusRoburGaliciaStand",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 1,
+        "min_age": 0,
+        "max_age": 100
+      }
+    },
+    "operation_7":{
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.stand.Qrobur_stand__gal__v01",
+      "model_class": "QuercusRoburGaliciaStand",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "VOLUME",
+        "volumen": 100,
+        "min_age": 0,
+        "max_age": 100
+      }
+    }
+  }
+}

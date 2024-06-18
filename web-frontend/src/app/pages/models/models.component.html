@@ -1,0 +1,9 @@
+<app-sim-table [tableHeader]=header
+               [tableBody]=models
+               [tableTitle]="'models'"
+               [rowButtons]="['edit', 'delete']"
+               [addForm]="addForm"
+               (addEvent)="add($event)"
+               (editEvent)="edit($event)"
+               (deleteEvent)="delete($event)"
+></app-sim-table>

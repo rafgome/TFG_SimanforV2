@@ -1,0 +1,65 @@
+.file {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.file button {
+    margin: 10px auto;
+    display: block;
+    padding: 10px;
+    min-width: 200px;
+}
+
+.close-button {
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.inventory-radio-group {
+  display: flex;
+  margin: 2px;
+}
+
+.inventory-radio-button {
+  margin-right: 15px;
+}
+
+.password-field {
+  width: 100%;
+}
+
+.password-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle-button {
+  margin-left: -30px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+}
+
+.dialog-actions .center-buttons {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.dialog-actions .left-button {
+  position: absolute;
+  left: 0;
+}
+
+.dialog-actions .right-button {
+  position: absolute;
+  right: 20px;
+}

@@ -1,0 +1,42 @@
+{
+  "user": "Aitor Vázquez Veloso",
+  "name": "Experimento Claras",
+  "overwrite_output_file": "YES",
+  "output_path": "../tests/outputs/psyl_LIDAR__",
+  "decimal_numbers": 2,
+  "zip_compression": "NO",
+  "operations": {
+    "operation_0":{
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.xlsx_load",
+      "model_class": "XLSXLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 0,
+        "time": 0,
+        "input": "../tests/inputs/psyl_LIDAR.xlsx"
+      }
+    },
+    "operation_1":{
+      "name": "Inicio",
+      "description": "Inicialización de datos",
+      "model_path": "models.trees.Psylvestris_LIDAR__sisc__v01",
+      "model_class": "PinusSylvestrisSISC",
+      "operation": "INIT",
+      "variables": {
+        "time": 0
+     }
+    },
+        "operation_2":{
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Psylvestris_LIDAR__sisc__v01",
+      "model_class": "PinusSylvestrisSISC",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<!-- ============================================================== -->
+<!-- sidebar -->
+<!-- ============================================================== -->
+<mat-nav-list appAccordion>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected"
+                 group="inventory" *ngIf="authService.isAuthenticated()">
+
+    <a class="" appAccordionToggle [routerLink]="['/inventory']">
+      <mat-icon>view_list</mat-icon>
+      <span>{{ 'menu.inventories' | translate }}</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected"
+                 group="actions" *ngIf="authService.isAuthenticated()">
+
+    <a class="" appAccordionToggle [routerLink]="['/actions']">
+      <mat-icon>signpost</mat-icon>
+      <span>{{ 'menu.actions' | translate }}</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected"
+                 group="model" *ngIf="authService.isAuthenticated()">
+
+    <a class="" appAccordionToggle [routerLink]="['/models']">
+      <mat-icon>perm_media</mat-icon>
+      <span>{{ 'menu.models' | translate }}</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected"
+                 group="scenario" *ngIf="authService.isAuthenticated()">
+
+    <a class="" appAccordionToggle [routerLink]="['/scenarios']">
+      <mat-icon>web</mat-icon>
+      <span>{{ 'menu.scenarios' | translate }}</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected"
+                 group="user" *ngIf="authService.isAuthenticated() && authService.getRole() === 'admin'">
+
+    <a class="" appAccordionToggle [routerLink]="['/users']">
+      <mat-icon>tab</mat-icon>
+      <span>{{ 'menu.users' | translate }}</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected">
+    <a class="" appAccordionToggle [routerLink]="['/help']">
+      <mat-icon>help</mat-icon>
+      <span>{{'menu.help' | translate}}</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item appAccordionLink routerLinkActive="selected">
+    <a class="" appAccordionToggle [routerLink]="['/legal']">
+      <mat-icon>dvr</mat-icon>
+      <span>{{'menu.legal' | translate}}</span>
+      <span fxFlex></span>
+    </a>
+  </mat-list-item>
+</mat-nav-list>

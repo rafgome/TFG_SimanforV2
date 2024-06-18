@@ -1,0 +1,217 @@
+
+### ------------------------------ esta parte no la modifiques ------------------###
+
+{
+  "user": "",
+  "name": "Experimento Claras",
+  "overwrite_output_file": true,
+  "output_path": "../../output/PPIN_SIM__",
+  "decimal_numbers": 2,
+  "zip_compression": false,
+  "operations": [
+    {
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.xlsx_load",
+      "model_class": "XLSXLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 25,
+        "time": 0,
+        "input": "../../data/data_sm4.2015.1p_eng.xlsx"
+      }
+    },
+    {
+      "name": "Inicio",
+      "description": "Inicialización de datos",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "INIT",
+      "variables": {
+        "time": 0
+      }
+    },
+	
+### hasta aquí se cargan los datos y se hace una primera simulación para calcular la información que no existe en el inventario
+### a partir de aquí, tú configuras el escenario. Te dejo un ejemplo de código para cortas y ejecuciones.
+	
+	
+# estructura para realizar una corta
+# aquí tienes que modificar el apartado model_class, que puede ser:
+#	- CutDownBySmallest - corta por lo bajo
+#	- CutDownByTallest - corta por lo alto
+#	- CutDownSystematics - corta sistemática (corta aleatoriamente los árboles)
+	
+# el campo cut_down, que puede ser:
+#	- PERCENTOFTREES - nº de pies
+#	- AREA - área basimétrica
+#	- VOLUME - volumen
+
+# y el campo volumen, que es, en función de los criterios elegidos anteriormente, cuanta masa deseas extraer. Se expresa en %
+# lo demás ya lo cambio yo, 
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "PERCENTOFTREES",
+        "volumen": 10
+      }
+    },
+	
+# estructura para realizar una ejecución
+	
+# aquí, lo único que necesito que cambies es "time", que es el tiempo de las ejecuciones. Como te dije, cada modelo tiene su tiempo para hacer avanzar
+# la masa en el tiempo, te lo dejo resumido en el excel "modelos"
+	
+    {
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+	
+	
+# a partir de aquí puedes borrar el contenido, yo te lo dejo para que veas un escenario "tipo" por si te vale de referencia para resolver alguna duda
+	
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "VOLUME",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "PERCENTOFTREES",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "VOLUME",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_systematic",
+      "model_class": "CutDownSystematics",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    {
+      "name": "Simulacion 5",
+      "description": "Simulación durante 5 años",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    }
+  ]
+}

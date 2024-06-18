@@ -1,0 +1,34 @@
+<button class="close-button" mat-button (click)="onNoClick()">X</button>
+<h1 mat-dialog-title>{{ 'inventory_actions.new_title' | translate }}</h1>
+<div mat-dialog-content>
+  <p>
+    {{ 'inventories.title' | translate  }}:
+    <button mat-button
+      class="right-align"
+      *ngIf="!inventory"
+      color="warn"
+      (click)="selectInventoryDialog()"
+      tabindex="-1">{{ 'scenarios.select_inventory' | translate }}
+    </button>
+    <button mat-button
+      class="right-align" 
+      *ngIf="!!inventory "
+      color="warn"
+      (click)="selectInventoryDialog()"
+      tabindex="-1">{{ inventory.name }} {{ 'scenarios.change' | translate }}
+    </button>
+  </p>
+  <div *ngFor="let field of dataModel">
+    <div *ngIf="field.type == 'file' && editId === undefined" class="file">
+      {{'inventory_actions.desc' | translate }}
+      <input #csvInput hidden="true" type="file" onclick="this.value=null"
+      (change)="fileInputChange($event, field.name)" accept="{{ field.accept }}" required/>
+      <button mat-flat-button color="primary"
+      (click)="csvInput.click()">{{ !data["fileName"] ? ("actions.select_input" | translate) : data["fileName"] + ("actions.change_input" | translate) }}</button>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="primary"  (click)="close()" tabindex="8">{{ 'actions.send' | translate }}</button>
+  <button mat-button color="warn" (click)="onNoClick()" tabindex="-1">{{ 'actions.cancel' | translate }}</button>
+</div>

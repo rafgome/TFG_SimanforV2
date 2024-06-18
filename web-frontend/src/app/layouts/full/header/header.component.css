@@ -1,0 +1,16 @@
+.header-menu-container{
+    display: flex;
+    align-items: center;
+}
+
+.lenguage-select {
+    margin-right: 16px;
+}
+
+.login-button {
+    margin-left: auto;
+}
+
+.logout-button {
+    margin-left: auto;
+}

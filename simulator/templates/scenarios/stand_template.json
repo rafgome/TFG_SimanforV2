@@ -1,0 +1,18 @@
+{
+  "user": "",
+  "name": "Experimento Claras",
+  "overwrite_output_file": true,
+  "output_path": "../../output/STAND_PSYL_EBRO__",
+  "decimal_numbers": 2,
+  "zip_compression": false,
+  "operations": [
+    {"name": "Inicio", "description": "Carga de datos", "model_path": "models.load.xlsx_load", "model_class": "XLSXLoad", "operation": "LOAD", "variables": {"init": 25, "time": 0, "input": "../../data/data_sm4.2015.1p_eng_psyl.xlsx"}},
+    {"name": "Inicio", "description": "Inicialización de datos", "model_path": "models.stand.Psylvestris_stand__High_Ebro_Basin__v01", "model_class": "PinusSylvestrisHighEbroBasinStand", "operation": "INIT", "variables": {"time": 0}},
+    {"name": "Simulacion 5", "description": "Simulación durante 5 años", "model_path": "models.stand.Psylvestris_stand__High_Ebro_Basin__v01", "model_class": "PinusSylvestrisHighEbroBasinStand", "operation": "EXECUTION", "variables": {"time": 5, "min_age": 0, "max_age": 100}},
+    {"name": "Harvest", "description": "Corta", "model_path": "models.stand.Psylvestris_stand__High_Ebro_Basin__v01", "model_class": "PinusSylvestrisHighEbroBasinStand", "operation": "HARVEST", "variables": {"time": 0, "cut_down": "PERCENTOFTREES", "volumen": 10, "min_age": 0, "max_age": 100}},
+    {"name": "Simulacion 5", "description": "Simulación durante 5 años", "model_path": "models.stand.Psylvestris_stand__High_Ebro_Basin__v01", "model_class": "PinusSylvestrisHighEbroBasinStand", "operation": "EXECUTION", "variables": {"time": 5, "min_age": 0, "max_age": 100}},
+    {"name": "Harvest", "description": "Corta", "model_path": "models.stand.Psylvestris_stand__High_Ebro_Basin__v01", "model_class": "PinusSylvestrisHighEbroBasinStand", "operation": "HARVEST", "variables": {"time": 0, "cut_down": "AREA", "volumen": 10, "min_age": 0, "max_age": 100}},
+    {"name": "Simulacion 5", "description": "Simulación durante 5 años", "model_path": "models.stand.Psylvestris_stand__High_Ebro_Basin__v01", "model_class": "PinusSylvestrisHighEbroBasinStand", "operation": "EXECUTION", "variables": {"time": 5, "min_age": 0, "max_age": 100}},
+    {"name": "Harvest", "description": "Corta", "model_path": "models.stand.Psylvestris_stand__High_Ebro_Basin__v01", "model_class": "PinusSylvestrisHighEbroBasinStand", "operation": "HARVEST", "variables": {"time": 0, "cut_down": "VOLUME", "volumen": 50, "min_age": 0, "max_age": 100}}
+  ]
+}

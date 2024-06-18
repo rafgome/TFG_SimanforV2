@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "inventory": { "type": "string" },
+    "actions": { 
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+            "plot_id": { "type": "string"},
+            "tree_id": { "type": "string"},
+            "species": { "type": "string" },
+            "action": { 
+              "type": "string",
+              "enum": ["cut", "preserve"]
+            },
+            "reason": { "type": "string" }
+        },
+        "required": ["plot_id", "tree_id", "species", "action", "reason"]
+      }
+    }
+  },
+  "required": ["inventory", "actions"]
+}

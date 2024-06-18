@@ -1,0 +1,24 @@
+.close-button {
+    float: right;
+    top:-24px;
+    right:-24px;
+}
+
+.file-label {
+  font-size: smaller;
+  color: grey;
+}
+
+.file-name {
+  color: black;
+}
+
+.warning-RStudio {
+  font-size: small;
+  color: rgb(105, 105, 105);
+}
+
+.actions-buttons {
+  display: flex;
+  justify-content: center;
+}

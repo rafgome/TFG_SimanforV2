@@ -1,0 +1,160 @@
+<app-basic-spinner [visible]=loading></app-basic-spinner>
+
+<button class="close-button" mat-button (click)="onNoClick()">X</button>
+<h1 mat-dialog-title *ngIf="dataModel">{{ 'scenarios.details_title' | translate }}</h1>
+<h1 mat-dialog-title *ngIf="!dataModel">{{ 'scenarios.new_title' | translate }}</h1>
+<mat-dialog-content>
+  <p>
+    <button mat-button
+            *ngIf="!inventory && !dataModel"
+            color="warn"
+            (click)="selectInventoryDialog()"
+            tabindex="-1">{{ 'scenarios.select_inventory' | translate }}
+    </button>
+    <button mat-button
+            *ngIf="!!inventory "
+            color="warn"
+            (click)="selectInventoryDialog()"
+            tabindex="-1">{{ inventory.name }} {{ 'scenarios.change' | translate }}
+    </button>
+    <button mat-button
+            class="right-align"
+            *ngIf="!projectionModel && !dataModel"
+            color="warn"
+            (click)="selectProjectionModelDialog()"
+            tabindex="-1">{{ 'scenarios.select_projection_model' | translate }}
+    </button>
+    <button mat-button
+            class="right-align"
+            *ngIf="!!projectionModel"
+            color="warn"
+            (click)="selectProjectionModelDialog()"
+            tabindex="-1">{{ projectionModel.name }} {{ 'scenarios.change' | translate }}
+    </button>
+  </p>
+  <p>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let step of steps; let i = index" [expanded]=true>
+        <mat-expansion-panel-header >
+          <mat-panel-title>
+            <input matInput
+                   *ngIf="!dataModel"
+                   placeholder="{{'scenarios.insert_title' | translate}}"
+                   (change)="changeField('name', i, $event)"
+                   (click)="$event.stopPropagation()"
+                   (keydown.Space)="$event.stopImmediatePropagation()"> <!-- TODO: Al meter un espacio se cierra el acordeon -->
+  <p *ngIf="dataModel">{{step.name}}</p>
+  </mat-panel-title>
+  <mat-panel-description>
+    <input matInput
+           *ngIf="!dataModel"
+           placeholder="{{'scenarios.insert_description' | translate}}"
+           (change)="changeField('description', i, $event)"
+           (click)="$event.stopPropagation()"
+           (keydown.Space)="$event.stopImmediatePropagation();"> <!-- TODO: Al meter un espacio se cierra el acordeon -->
+    <p *ngIf="dataModel">{{step.description}}</p>
+
+  </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div *ngIf="!!step.model">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <p><strong>{{'scenarios.model_name' | translate}}</strong>{{step.model.name}}</p>
+        <p><strong>{{'scenarios.model_path' | translate}}</strong>{{step.model.modelPath}}</p>
+        <p><strong>{{'scenarios.model_class' | translate}}</strong>{{step.model.modelClass}}</p>
+        <p><strong>{{'scenarios.model_operation' | translate}}</strong>{{step.model.operation}}</p>
+        <p><strong>{{'scenarios.operatingDimensions' | translate}}:</strong></p>
+        <p>{{step.model.operatingDimensions}} </p>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <p>{{'scenarios.model_variables' | translate}}</p>
+        <div *ngIf="!dataModel">
+          <!-- General variables -->
+          <p>
+            <input matInput placeholder="time" type="number" digitOnly
+                   (change)="changeVariable('time', i, $event.target.value)"/>
+          </p>
+          <p>
+            <input matInput placeholder="min_age " type="number" digitOnly
+                   (change)="changeVariable('min_age', i, $event.target.value)"/>
+          </p>
+          <p>
+            <input matInput placeholder="max_age" type="number" digitOnly
+                   (change)="changeVariable('max_age', i, $event.target.value)"/>
+          </p>
+
+          <div *ngIf="step.model.type === 'cutting'">
+            <!-- Specific cutting variables -->
+            <p>
+              <mat-select
+                placeholder="type"
+                (selectionChange)="changeVariable('cut_down', i, $event.value)"
+              >
+                <mat-option value="PERCENTOFTREES">{{ 'scenarios.trees_quantity' | translate}}</mat-option>
+                <mat-option value="VOLUME">{{ 'scenarios.volume' | translate}}</mat-option>
+                <mat-option value="AREA">{{ 'scenarios.basimetric_area' | translate}}</mat-option>
+              </mat-select>
+            </p>
+            <p>
+              <input matInput placeholder="percent" type="number" digitOnly
+                     (change)="changeVariable('volumen', i, $event.target.value)"/>
+            </p>
+          </div>
+
+          <div *ngIf="step.model.type === 'projection'">
+            <!-- Specific projection variables -->
+          </div>
+        </div>
+        <div *ngIf="dataModel">
+          <div *ngFor="let item of step.variables | keyvalue">
+            <p *ngIf="item.key != 'cut_down'">
+            {{item.key}}: {{item.value}}
+            </p>
+            <p *ngIf="item.value == 'PERCENTOFTREES'">{{item.key}}: {{ 'scenarios.trees_quantity' | translate}}
+            </p>
+            <p *ngIf="item.value == 'VOLUME'">{{item.key}}: {{ 'scenarios.volume' | translate}}
+            </p>
+            <p *ngIf="item.value == 'AREA'">{{item.key}}: {{ 'scenarios.basimetric_area' | translate}}
+            </p>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <p *ngIf="!step.model">
+  <div>
+    <button mat-button color="warn" *ngIf="!dataModel" (click)="applyProjectionModel(i)"
+            tabindex="-1">{{ 'scenarios.apply_projection' | translate }}
+    </button>
+    &nbsp;
+    <button mat-button color="warn" *ngIf="!dataModel" (click)="selectCuttingModelDialog(i)"
+            tabindex="-1">{{ 'scenarios.apply_cutting' | translate }}
+    </button>
+  </div>
+  <!-- </p> -->
+
+  <mat-action-row>
+    <button mat-button *ngIf="!dataModel" color="info" (click)="addStep(i)"
+            tabindex="-1">{{ 'scenarios.add_step' | translate }}
+    </button>
+    <button mat-button *ngIf="!dataModel && steps.length > 1" color="error" (click)="removeStep(i)"
+            tabindex="-1">{{ 'scenarios.remove_step' | translate }}
+    </button>
+  </mat-action-row>
+  </mat-expansion-panel>
+  </mat-accordion>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button *ngIf="dataModel" color="primary" (click)="run(dataModel._id)"
+          tabindex="8">{{ 'actions.run' | translate }}
+  </button>
+  <button mat-button *ngIf="!dataModel" color="primary" (click)="close()"
+          tabindex="8">{{ 'actions.send' | translate }}
+  </button>
+  <button mat-button *ngIf="!dataModel" color="warn" (click)="onNoClick()"
+          tabindex="-1">{{ 'actions.cancel' | translate }}
+  </button>
+</mat-dialog-actions>

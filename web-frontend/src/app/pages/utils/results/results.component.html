@@ -1,0 +1,25 @@
+<app-basic-spinner [visible]=loading></app-basic-spinner>
+
+<button class="close-button" mat-button (click)="onNoClick()">X</button>
+<h1 mat-dialog-title>{{ 'table.results_message' | translate}}</h1>
+
+<div mat-dialog-content>
+    <p id="fileInfo">
+        <mat-label class="file-label">{{ 'table.results_file' | translate }}</mat-label>
+        <span id="fileZip" class="file-name"> {{ fileName }} </span>
+    </p><hr>
+    <p>
+        <mat-label class="warning-RStudio">{{ 'table.results_warning' | translate }}</mat-label>
+    </p>
+</div>
+<mat-dialog-actions class="actions-buttons">
+    <button mat-button color="primary" (click)="download(dataModel._id)"
+            tabindex="8">{{ 'actions.download_results' | translate }}
+    </button>
+    <button mat-button color="primary" (click)="connectRShiny()"
+            tabindex="8">{{ 'actions.connect_results_rshiny' | translate }}
+    </button>
+    <button mat-button color="warn" (click)="onNoClick()"
+            tabindex="-1">{{ 'actions.cancel' | translate }}
+    </button>
+  </mat-dialog-actions>

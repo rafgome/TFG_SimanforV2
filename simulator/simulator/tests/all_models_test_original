@@ -1,0 +1,55 @@
+#!/usr/bin/bash
+
+python3 ../src/main.py -s scenarios/existencias.json > terminal_info/existencias.txt
+python3 ../src/main.py -s scenarios/Cladanifer.json > terminal_info/Cladanifer.txt
+
+python3 ../src/main.py -s scenarios/mix_1.json > terminal_info/mix1_test.txt
+python3 ../src/main.py -s scenarios/mix_2.json > terminal_info/mix2_test.txt
+python3 ../src/main.py -s scenarios/mix_3.json > terminal_info/mix3_test.txt
+python3 ../src/main.py -s scenarios/mix_4.json > terminal_info/mix4_test.txt
+python3 ../src/main.py -s scenarios/mix_5.json > terminal_info/mix5_test.txt
+python3 ../src/main.py -s scenarios/mix_6.json > terminal_info/mix6_test.txt
+python3 ../src/main.py -s scenarios/mix_7.json > terminal_info/mix7_test.txt
+python3 ../src/main.py -s scenarios/mix_8.json > terminal_info/mix8_test.txt
+python3 ../src/main.py -s scenarios/mix_9.json > terminal_info/mix9_test.txt
+
+python3 ../src/main.py -s scenarios/fsyl_xx.json > terminal_info/fsyl_xx_test.txt
+python3 ../src/main.py -s scenarios/phal_ar.json > terminal_info/phal_ar_test.txt
+python3 ../src/main.py -s scenarios/phal_ar_cat.json > terminal_info/phal_ar_cat_test.txt
+python3 ../src/main.py -s scenarios/pnig_cat.json > terminal_info/pnig_cat_test.txt
+python3 ../src/main.py -s scenarios/ppin_at_gal_coast.json > terminal_info/ppin_at_gal_coast_test.txt
+python3 ../src/main.py -s scenarios/ppin_at_gal_inland.json > terminal_info/ppin_at_gal_inland_test.txt
+python3 ../src/main.py -s scenarios/ppin_sim_v01.json > terminal_info/ppin_sim_v01_test.txt
+python3 ../src/main.py -s scenarios/ppin_sim_v02.json > terminal_info/ppin_sim_v02_test.txt
+python3 ../src/main.py -s scenarios/ppinea_and.json > terminal_info/ppinea_and_test.txt
+python3 ../src/main.py -s scenarios/ppinea_cat.json > terminal_info/ppinea_cat_test.txt
+python3 ../src/main.py -s scenarios/ppinea_sc.json > terminal_info/ppinea_sc_test.txt
+python3 ../src/main.py -s scenarios/prad_gal.json > terminal_info/prad_gal_test.txt
+python3 ../src/main.py -s scenarios/psyl_cat_nat.json > terminal_info/psyl_cat_nat_test.txt
+python3 ../src/main.py -s scenarios/psyl_cat_plant.json > terminal_info/psyl_cat_plant_test.txt
+python3 ../src/main.py -s scenarios/psyl_sisc_v01.json > terminal_info/psyl_sisc_v01_test.txt
+python3 ../src/main.py -s scenarios/psyl_sisc_v02.json > terminal_info/psyl_sisc_v02_test.txt
+python3 ../src/main.py -s scenarios/qpet_pal.json > terminal_info/qpet_pal_test.txt
+python3 ../src/main.py -s scenarios/qpyr_cyl.json > terminal_info/qpyr_cyl_test.txt
+python3 ../src/main.py -s scenarios/qrob_gal.json > terminal_info/qrob_gal_test.txt
+python3 ../src/main.py -s scenarios/qsub_cat.json > terminal_info/qsub_cat_test.txt
+
+python3 ../src/main.py -s scenarios/test_cuts.json > terminal_info/test_cuts.txt
+
+python3 ../src/main.py -s scenarios/stand_bet_gal.json > terminal_info/stand_bet_gal_test.txt
+python3 ../src/main.py -s scenarios/stand_pnig_cyl.json > terminal_info/stand_pnig_cyl_test.txt
+python3 ../src/main.py -s scenarios/stand_ppin_gal_coast.json > terminal_info/stand_ppin_gal_coast_test.txt
+python3 ../src/main.py -s scenarios/stand_ppin_gal_inland.json > terminal_info/stand_ppin_gal_inland_test.txt
+python3 ../src/main.py -s scenarios/stand_ppin_ip.json > terminal_info/stand_ppin_ip_test.txt
+python3 ../src/main.py -s scenarios/stand_prad_gal.json > terminal_info/stand_prad_gal_test.txt
+python3 ../src/main.py -s scenarios/stand_psyl_ebro.json > terminal_info/stand_psyl_ebro_test.txt
+python3 ../src/main.py -s scenarios/stand_psyl_gal.json > terminal_info/stand_psyl_gal_test.txt
+python3 ../src/main.py -s scenarios/stand_psyl_ukraine.json > terminal_info/stand_psyl_ukraine_test.txt
+python3 ../src/main.py -s scenarios/stand_qpet_ccant.json > terminal_info/stand_qpet_ccant_test.txt
+python3 ../src/main.py -s scenarios/stand_qrob_gal.json > terminal_info/stand_qrob_gal_test.txt
+python3 ../src/main.py -s scenarios/stand_silves_mad.json > terminal_info/stand_silves_mad_test.txt
+python3 ../src/main.py -s scenarios/stand_silves_si-sc.json > terminal_info/stand_silves_si-sc_test.txt
+
+grep -r "mistake"
+grep -r "rror"
+

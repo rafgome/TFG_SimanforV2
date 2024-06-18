@@ -1,0 +1,39 @@
+{
+  "user": "Aitor",
+  "name": "Experimento Claras",
+  "overwrite_output_file": true,
+  "output_path": "../../output/ppinaster_test___",
+  "decimal_numbers": 2,
+  "zip_compression": false,
+  "operations": [
+    {
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.csv_load",
+      "model_class": "CSVLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 0,
+        "time": 0,
+        "input": {
+          "plots": "../../data/plots_ppinaster_test.csv",
+          "trees": "../../data/trees_ppinaster_test.csv"
+        }
+      }
+    },
+    {"name": "Inicio", "description": "Inicialización de datos", "model_path": "models.trees.Ppinaster_me__sim__v02", "model_class": "PinusPinasterSIM", "operation": "INIT", "variables": { "time": 0}},
+    {"name": "Simulacion", "description": "Inicialización de datos", "model_path": "models.trees.Ppinaster_me__sim__v02", "model_class": "PinusPinasterSIM", "operation": "EXECUTION", "variables": { "time": 5}},
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_systematic",
+      "model_class": "CutDownSystematics",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 50
+      }
+    }
+  ]
+}

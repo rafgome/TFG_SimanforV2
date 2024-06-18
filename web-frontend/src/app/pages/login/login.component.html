@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>{{ 'login.title' | translate }}</mat-card-title>
+
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{ 'login.user' | translate }}</mat-label>
+        <input matInput [(ngModel)]="username" placeholder="{{ 'login.user' | translate }}" name="user">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>{{ 'login.password' | translate }}</mat-label>
+        <input matInput [(ngModel)]="password" placeholder="{{ 'login.password' | translate }}" type="password" name="password">
+      </mat-form-field>
+
+      <p>
+        <a href="assets/documents/CondicionesDeUso.pdf" target="_blank">{{ 'login.use_conditions' | translate }}</a>
+      </p>
+
+      <!-- <p>
+        <a href="assets/documents/Regist.pdf" target="_blank">{{ 'login.register' | translate }}</a>
+      </p> -->
+
+      <mat-card-actions>
+        <button mat-button type="submit" color="primary">{{ 'login.title' | translate }}</button>
+      </mat-card-actions>
+    </form>
+
+    <hr>
+
+    <p style="text-align: center;"> {{ 'login.newUser' | translate }} </p>
+    <div style="display: flex; justify-content: center;">
+      <button mat-button (click)="newUserRequest()" color="primary">{{ 'login.new' | translate }}</button>
+    </div>
+    
+  </mat-card-content>
+</mat-card>

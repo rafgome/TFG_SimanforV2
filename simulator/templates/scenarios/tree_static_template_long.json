@@ -1,0 +1,68 @@
+{
+  "user": "",
+  "name": "Experimento Claras",
+  "overwrite_output_file": true,
+  "output_path": "../../output/PPINASTER_GAL_INLAND__",
+  "decimal_numbers": 2,
+  "zip_compression": false,
+  "operations": [
+    {
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.xlsx_load",
+      "model_class": "XLSXLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 25,
+        "time": 0,
+        "input": "../../data/data_sm4.2015.1p_eng_ppinaster.xlsx"
+      }
+    },
+    {
+      "name": "Inicio",
+      "description": "Inicialización de datos",
+      "model_path": "models.trees.Ppinaster_at__gal_inland__v01",
+      "model_class": "PinusPinasterGaliciaInland",
+      "operation": "INIT",
+      "variables": {
+        "time": 0
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "PERCENTOFTREES",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "VOLUME",
+        "volumen": 10
+      }
+    },
+    {
+      "name": "Harvest",
+      "description": "Corta",
+      "model_path": "models.harvest.cut_down_by_smallest",
+      "model_class": "CutDownBySmallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 10
+      }
+    }
+  ]
+}

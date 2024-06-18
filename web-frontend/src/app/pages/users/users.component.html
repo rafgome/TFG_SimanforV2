@@ -1,0 +1,11 @@
+<app-sim-table
+  [tableHeader]=header
+  [tableBody]=users
+  [tableTitle]="'users'"
+  [rowButtons]="['delete']"
+  [addForm]="addForm"
+  [requestedUsers]=requestedUsers
+  [numRequestedUsers]="numRequestedUsers"
+  (addEvent)="add($event)"
+  (deleteEvent)="delete($event)"
+></app-sim-table>
