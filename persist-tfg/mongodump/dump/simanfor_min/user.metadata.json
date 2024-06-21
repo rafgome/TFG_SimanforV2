@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"simanfor_min.user"}],"uuid":"f1fbb8c2db5045b5adb379f5d15fa2b1"}
