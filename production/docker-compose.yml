@@ -1,7 +1,7 @@
 version: '3.4'
 
 networks:
-  simanfor:
+  simanfor_tfg:
     external: false
 
 services:
@@ -16,7 +16,7 @@ services:
       - 80:80
       - 443:443
     networks:
-      - simanfor
+      - simanfor_tfg
     depends_on:
       - web-frontend
 
@@ -29,7 +29,7 @@ services:
     depends_on:
       - web-backend
     networks:
-      - simanfor
+      - simanfor_tfg
 
   web-backend:
     container_name: backend
@@ -48,17 +48,18 @@ services:
       SCRATCH_PATH: /scratch/simanfor
       INPUT_SCRATCH_PATH: /input
       OUTPUT_SCRATCH_PATH: /output
-      MONGO_HOST: mongodb://sngular_aia_1_3:P1l1nh004.@mongo:27017/
-      MONGO_DB: simanfor
+      MONGO_HOST: mongodb://database_simanfor:simanforlocal@mongo:27017/
+      MONGO_DB: simanfor_min
       JWT_MASTER_TOKEN: simanforsngular
       # PRODUCTION: 1
     volumes:
-      - /home/rafagc/simanfor-rgc/persist/data_input:/usr/src/app/input
-      - /home/rafagc/simanfor-rgc/persist/data_output:/usr/src/app/output
+      - /home/rafagc/TFG_SimanforV2/persist-tfg/data_input/inventory:/usr/src/app/input/inventory
+      - /home/rafagc/TFG_SimanforV2/persist-tfg/data_input/scenario:/usr/src/app/input/scenario
+      - /home/rafagc/TFG_SimanforV2/persist-tfg/data_output:/usr/src/app/output
     depends_on:
       - mongo
     networks:
-      - simanfor
+      - simanfor_tfg
 
   mongo:
     container_name: mongo
@@ -66,19 +67,19 @@ services:
     restart: always
     ports:
       # - 8081:8081
-      - 27017
+      - 27017:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: sngular_aia_1_3
-      MONGO_INITDB_ROOT_PASSWORD: P1l1nh004.
-      MONGO_INITDB_DATABASE: simanfor
+      MONGO_INITDB_ROOT_USERNAME: database_simanfor
+      MONGO_INITDB_ROOT_PASSWORD: simanforlocal
+      MONGO_INITDB_DATABASE: simanfor_min
     volumes:
-      - /home/rafagc/simanfor-rgc/persist/mongodb:/data/db
+      - /home/rafagc/TFG_SimanforV2/persist-tfg/mongodb:/data/db
     networks:
-      - simanfor
+      - simanfor_tfg
 
   rstudio:
     container_name: simforstudio
-    image: rocker/verse
+    image: rocker/verse:latest
     build: 
       context: ./rstudio
     restart: always
@@ -89,7 +90,7 @@ services:
       - ROOT=true
       - DISABLE_AUTH=true
     volumes:
-      - /home/rafagc/simanfor-rgc/persist/rstudio:/home/rstudio
-      - /home/rafagc/simanfor-rgc/persist/data_output:/home/rstudio/data
+      - /home/rafagc/TFG_SimanforV2/persist-tfg/rstudio:/home/rstudio
+      - /home/rafagc/TFG_SimanforV2/persist-tfg/data_output:/home/rstudio/data
     networks:
-      - simanfor
+      - simanfor_tfg

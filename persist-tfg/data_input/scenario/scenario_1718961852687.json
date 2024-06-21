@@ -1,0 +1,97 @@
+{
+  "name": "scenario",
+  "overwrite_output_file": "YES",
+  "output_path": "/scratch/simanfor/output/667546bc2a68d906f079d1f3_",
+  "decimal_numbers": 4,
+  "zip_compression": "NO",
+  "operations": {
+    "operation_0": {
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.basic_load",
+      "model_class": "BasicLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 25,
+        "time": 0,
+        "input": "/scratch/simanfor/input/inventory_1718893335712.xlsx"
+      }
+    },
+    "operation_1": {
+      "name": "Inicio",
+      "description": "Inicialización de datos",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "INIT",
+      "variables": {
+        "time": 0
+      }
+    },
+    "operation_2": {
+      "name": "Proyección 1",
+      "description": "Prueba admin de Escenario",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 5
+      }
+    },
+    "operation_3": {
+      "name": "Corta 1",
+      "description": "Prueba admin de Escenario",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "PERCENTOFTREES",
+        "volumen": 3
+      }
+    },
+    "operation_4": {
+      "name": "Proyección 2",
+      "description": "Prueba admin de Escenario",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 13
+      }
+    },
+    "operation_5": {
+      "name": "Corta 2",
+      "description": "Prueba admin de Escenario",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "VOLUME",
+        "volumen": 20
+      }
+    },
+    "operation_6": {
+      "name": "Corta 3",
+      "description": "Prueba admin de Escenario",
+      "model_path": "models.harvest.cut_down_by_tallest",
+      "model_class": "CutDownByTallest",
+      "operation": "HARVEST",
+      "variables": {
+        "time": 0,
+        "cut_down": "AREA",
+        "volumen": 3
+      }
+    },
+    "operation_7": {
+      "name": "Proyección 3",
+      "description": "Prueba admin de Escenario",
+      "model_path": "models.trees.Ppinaster_me__sim__v01",
+      "model_class": "PinusPinasterSIM",
+      "operation": "EXECUTION",
+      "variables": {
+        "time": 25
+      }
+    }
+  }
+}
