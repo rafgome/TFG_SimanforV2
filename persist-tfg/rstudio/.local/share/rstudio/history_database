@@ -19,3 +19,7 @@
 1718966736487:shinyApp(ui, server)
 1718967029742:runApp('~/simulator/RShiny/Shiny_completo_spiros.R')
 1718967134494:shinyApp(ui, server)
+1718994831653:shinyApp(ui, server)
+1719000256244:shinyApp(ui, server)
+1719000615943:shinyApp(ui, server)
+1719039593078:shinyApp(ui, server)

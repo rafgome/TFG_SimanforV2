@@ -1,7 +1,7 @@
 version: '3.4'
 
 networks:
-  simanfor_tfg:
+  simanforv2:
     external: false
 
 services:
@@ -16,7 +16,7 @@ services:
       - 80:80
       - 443:443
     networks:
-      - simanfor_tfg
+      - simanforv2
     depends_on:
       - web-frontend
 
@@ -29,7 +29,7 @@ services:
     depends_on:
       - web-backend
     networks:
-      - simanfor_tfg
+      - simanforv2
 
   web-backend:
     container_name: backend
@@ -48,8 +48,8 @@ services:
       SCRATCH_PATH: /scratch/simanfor
       INPUT_SCRATCH_PATH: /input
       OUTPUT_SCRATCH_PATH: /output
-      MONGO_HOST: mongodb://database_simanfor:simanforlocal@mongo:27017/
-      MONGO_DB: simanfor_min
+      MONGO_HOST: mongodb://database_simanfor_test:simanforlocaltest@mongo:27017/
+      MONGO_DB: simanfor_tiny
       JWT_MASTER_TOKEN: simanforsngular
       # PRODUCTION: 1
     volumes:
@@ -59,7 +59,7 @@ services:
     depends_on:
       - mongo
     networks:
-      - simanfor_tfg
+      - simanforv2
 
   mongo:
     container_name: mongo
@@ -69,13 +69,13 @@ services:
       # - 8081:8081
       - 27017:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: database_simanfor
-      MONGO_INITDB_ROOT_PASSWORD: simanforlocal
-      MONGO_INITDB_DATABASE: simanfor_min
+      MONGO_INITDB_ROOT_USERNAME: database_simanfor_test
+      MONGO_INITDB_ROOT_PASSWORD: simanforlocaltest
+      MONGO_INITDB_DATABASE: simanfor_tiny
     volumes:
-      - /home/rafagc/TFG_SimanforV2/persist-tfg/mongodb:/data/db
+      - /home/rafagc/persist-tfg/mongodb:/data/db
     networks:
-      - simanfor_tfg
+      - simanforv2
 
   rstudio:
     container_name: simforstudio
@@ -93,4 +93,4 @@ services:
       - /home/rafagc/TFG_SimanforV2/persist-tfg/rstudio:/home/rstudio
       - /home/rafagc/TFG_SimanforV2/persist-tfg/data_output:/home/rstudio/data
     networks:
-      - simanfor_tfg
+      - simanforv2
