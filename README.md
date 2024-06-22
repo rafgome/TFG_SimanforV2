@@ -30,7 +30,7 @@ Todos estos elementos se incluyen en forma de un mongo dump que debe ser restaur
 - Acceder al directorio TFG_SimanforV2/web-backend/mongo/, donde está almacenado el mongodump.
 - Ejecutar el siguiente comando, para copiarlo en el contenedor de mongoDB: docker cp ./dump/ mongo:mongo_dump
 - Entrar al bash del contenedor mongo, ejecutando el siguiente comando: docker exec -it mongo bash
-- Una vez dentro del contenedor, restaurar la base de datos indicando la contraseña especificada en el contenedor del backend del archivo docker-compose.yml: mongorestore -u database_simanfor mongo_dump/
+- Una vez dentro del contenedor, restaurar la base de datos indicando la contraseña especificada en el contenedor del backend del archivo docker-compose.yml: mongorestore -u database_simanfor_test mongo_dump/
 
 Tras esto, la base de datos del proyecto está poblada y lista para ser utilizada.
 

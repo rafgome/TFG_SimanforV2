@@ -41,10 +41,10 @@ services:
       - 3000:3000
     #Check which port uses Node docker container
     environment:
-      SSH_HOST: 157.88.224.203
-      SSH_PORT: 22
-      SSH_USERNAME: simanfor
-      SSH_PASSWORD: 5%9a4C6&
+      # SSH_HOST:
+      # SSH_PORT: 
+      # SSH_USERNAME:
+      # SSH_PASSWORD:
       SCRATCH_PATH: /scratch/simanfor
       INPUT_SCRATCH_PATH: /input
       OUTPUT_SCRATCH_PATH: /output
