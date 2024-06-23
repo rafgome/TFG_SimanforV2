@@ -37,3 +37,5 @@ Tras esto, la base de datos del proyecto está poblada y lista para ser utilizad
 ## Funcionalidad de la aplicación
 Se ha eliminado toda la funcionalidad relativa a las simulaciones, por motivos de seguridad relacionados con Simanfor. En su lugar, se proporcionan tres escenarios (dos simulados y uno sin simular), para poder hacer las pruebas relativas a la nueva funcionalidad añadida en este TFG. Estas pruebas son las relacionadas con RShiny, y los cambios en la interfaz de usuario.
 
+## Acceso a la aplicación
+Para probar la aplicación, acceder a 'http://localhost:443', que es el punto de acceso del proxy. A partir de aquí, las solicitudes se irán redirigiendo al frontend o al backend automáticamente, según corresponda.

@@ -51,6 +51,7 @@ services:
       MONGO_HOST: mongodb://database_simanfor_test:simanforlocaltest@mongo:27017/
       MONGO_DB: simanfor_tiny
       JWT_MASTER_TOKEN: simanforsngular
+      SERVER_PATH: ""
       # PRODUCTION: 1
     volumes:
       - /home/rafagc/TFG_SimanforV2/persist-tfg/data_input/inventory:/usr/src/app/input/inventory
